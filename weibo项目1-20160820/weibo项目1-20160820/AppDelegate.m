@@ -4,9 +4,9 @@
 //
 //  Created by azhang on 16/8/20.
 //  Copyright © 2016年 azhang. All rights reserved.
-//
-#define AZColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-#define AZRandomColor AZColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+////
+//#define AZColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+//#define AZRandomColor AZColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
 
 #import "AppDelegate.h"
 #import "AZHomeViewController.h"

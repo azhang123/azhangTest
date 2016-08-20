@@ -1,0 +1,37 @@
+//
+//  weibo项目1-20160820-Prefix.pch
+//  weibo项目1-20160820
+//
+//  Created by azhang on 16/8/20.
+//  Copyright © 2016年 azhang. All rights reserved.
+//
+
+#ifndef weibo__1_20160820_Prefix_pch
+#define weibo__1_20160820_Prefix_pch
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//自定义打印
+#ifdef DEBUG  //调试阶段
+#define MYLog(...)  NSLog(__VA_ARGS__)
+#else //发布阶段
+#define MYLog(...)
+#endif
+
+// RGB颜色
+#define AZColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define AZRandomColor AZColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#endif
+
+#endif /* weibo__1_20160820_Prefix_pch */
