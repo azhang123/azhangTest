@@ -7,6 +7,8 @@
 //
 
 #import "AZDiscoverViewController.h"
+#import "AZSearchBar.h"
+#import "UIView+Extension.h"
 
 @interface AZDiscoverViewController ()
 
@@ -15,13 +17,14 @@
 @implementation AZDiscoverViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    AZSearchBar *search=[[AZSearchBar alloc]init];
+    search.width=300;
+    search.height=30;
+    self.navigationItem.titleView=search;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {

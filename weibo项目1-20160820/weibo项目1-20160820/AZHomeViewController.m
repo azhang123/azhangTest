@@ -8,6 +8,8 @@
 
 #import "AZHomeViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
+#import "AZSearchBar.h"
 
 @interface AZHomeViewController ()
 
@@ -22,6 +24,11 @@
     self.navigationItem.leftBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(friendSearch) image:@"navigationbar_friendsearch" highlightImage:@"navigationbar_friendsearch_highlighted"];
     
     self.navigationItem.rightBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(pop) image:@"navigationbar_pop" highlightImage:@"navigationbar_pop_highlighted"];
+    
+    AZSearchBar *search=[[AZSearchBar alloc]init];
+    search.width=150;
+    search.height=30;
+    [self.view addSubview:search];
     
 }
 -(void)friendSearch

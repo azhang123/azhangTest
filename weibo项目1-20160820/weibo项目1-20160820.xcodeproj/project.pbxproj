@@ -15,6 +15,7 @@
 		E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94D91D67AEA500388801 /* AZMessageViewController.m */; };
 		E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DC1D67AEBF00388801 /* AZDiscoverViewController.m */; };
 		E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DF1D67AED800388801 /* AZProfileViewController.m */; };
+		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770211D6850E70076F211 /* AZNavigationController.m */; };
 		E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770241D6851BC0076F211 /* AZTabBarController.m */; };
 		E3C770311D686A6C0076F211 /* AZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7702F1D686A6C0076F211 /* AZTestViewController.m */; };
@@ -41,6 +42,8 @@
 		E30A94DC1D67AEBF00388801 /* AZDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDiscoverViewController.m; sourceTree = "<group>"; };
 		E30A94DE1D67AED800388801 /* AZProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZProfileViewController.h; sourceTree = "<group>"; };
 		E30A94DF1D67AED800388801 /* AZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZProfileViewController.m; sourceTree = "<group>"; };
+		E33B03CB1D695670007D6F8D /* AZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZSearchBar.h; sourceTree = "<group>"; };
+		E33B03CC1D695670007D6F8D /* AZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZSearchBar.m; sourceTree = "<group>"; };
 		E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weibo项目1-20160820-Prefix.pch"; sourceTree = "<group>"; };
 		E3C770201D6850E70076F211 /* AZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNavigationController.h; sourceTree = "<group>"; };
 		E3C770211D6850E70076F211 /* AZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNavigationController.m; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 		E3C7701E1D684F120076F211 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E33B03CB1D695670007D6F8D /* AZSearchBar.h */,
+				E33B03CC1D695670007D6F8D /* AZSearchBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,
 				E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */,
+				E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
