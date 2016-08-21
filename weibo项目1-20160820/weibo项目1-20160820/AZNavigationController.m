@@ -24,7 +24,7 @@
 +(void)initialize
 {
     //设置整个项目所有item的主题样式
-    UIBarButtonItem *navItem=[[UIBarButtonItem alloc]init];
+    UIBarButtonItem *navItem=[UIBarButtonItem appearance];
     
     //设置普通状态下文字属性
     NSMutableDictionary *textAttr=[NSMutableDictionary dictionary];
@@ -34,7 +34,7 @@
     
     //设置disable状态下文字属性
     NSMutableDictionary *disableTextAttr=[NSMutableDictionary dictionary];
-    disableTextAttr[NSForegroundColorAttributeName]=AZColor(0.6*255, 255*06, 255*0.6);
+    disableTextAttr[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
     disableTextAttr[NSFontAttributeName]=[UIFont systemFontOfSize:14];
     [navItem setTitleTextAttributes:disableTextAttr forState:UIControlStateDisabled];
 }
@@ -57,7 +57,7 @@
         
         //设置导航栏左边返回按钮
         viewController.navigationItem.leftBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(back) image:@"navigationbar_back" highlightImage:@"navigationbar_back_highlighted"];
-        viewController.navigationItem.rightBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(more) image:@"navigationbar_more_highlighted" highlightImage:@"navigationbar_more"];
+        viewController.navigationItem.rightBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(more) image:@"navigationbar_more" highlightImage:@"navigationbar_more_highlighted"];
         
     }
     
