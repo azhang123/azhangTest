@@ -10,6 +10,8 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
 #import "AZSearchBar.h"
+#import "AZDropMenuController.h"
+#import "AZTitleMenuController.h"
 
 @interface AZHomeViewController ()
 
@@ -25,12 +27,60 @@
     
     self.navigationItem.rightBarButtonItem=[UIBarButtonItem ItemWithTarget:self action:@selector(pop) image:@"navigationbar_pop" highlightImage:@"navigationbar_pop_highlighted"];
     
-    AZSearchBar *search=[[AZSearchBar alloc]init];
-    search.width=150;
-    search.height=30;
-    [self.view addSubview:search];
+    //创建按钮
+    UIButton *titleButton=[[UIButton alloc]init];
+    titleButton.width=150;
+    titleButton.height=30;
+    //设置按钮的文字和图片
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleButton.titleLabel.font=[UIFont systemFontOfSize:17];
+    
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    
+    //设置按钮文字和图片的排布
+    [titleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 40)];
+    [titleButton setImageEdgeInsets:UIEdgeInsetsMake(0, 70, 0, 0)];
+    //添加按钮
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView=titleButton;
     
 }
+
+/**
+ *  下拉按钮的点击方法
+ */
+-(void)titleClick:(UIButton *)button
+{
+    //新建下拉菜单视图控制器
+    AZDropMenuController *dropMenu=[AZDropMenuController menu];
+    //新建下拉菜单里的内容视图控制器
+    AZTitleMenuController *vc=[[AZTitleMenuController alloc]init];
+    vc.view.height=44*3;
+    
+    dropMenu.contentController=vc;
+    
+    [dropMenu showFrom:button];
+    
+
+    
+//    //取出最上方的窗口
+//    UIWindow *window=[[UIApplication sharedApplication].windows lastObject];
+//    
+//    //设置蒙板
+//    UIView *view=[[UIView alloc]init];
+//    view.frame=window.bounds;
+//    [window addSubview:view];
+//    
+//    //弹出下拉菜单
+//    UIImageView *menuView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"popover_background"]];
+//    menuView.width=217;
+//    menuView.height=217;
+//    [window addSubview:menuView];
+}
+
+
 -(void)friendSearch
 {
     MYLog(@"friendSearch");
