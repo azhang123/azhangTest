@@ -19,6 +19,7 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
 
 //自定义打印
 #ifdef DEBUG  //调试阶段

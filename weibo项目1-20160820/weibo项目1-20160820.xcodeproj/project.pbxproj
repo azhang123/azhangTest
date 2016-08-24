@@ -15,6 +15,7 @@
 		E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94D91D67AEA500388801 /* AZMessageViewController.m */; };
 		E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DC1D67AEBF00388801 /* AZDiscoverViewController.m */; };
 		E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DF1D67AED800388801 /* AZProfileViewController.m */; };
+		E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E30BAF471D6B2D950015190F /* AZTabBar.m */; };
 		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
@@ -44,6 +45,8 @@
 		E30A94DC1D67AEBF00388801 /* AZDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDiscoverViewController.m; sourceTree = "<group>"; };
 		E30A94DE1D67AED800388801 /* AZProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZProfileViewController.h; sourceTree = "<group>"; };
 		E30A94DF1D67AED800388801 /* AZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZProfileViewController.m; sourceTree = "<group>"; };
+		E30BAF461D6B2D950015190F /* AZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTabBar.h; sourceTree = "<group>"; };
+		E30BAF471D6B2D950015190F /* AZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZTabBar.m; sourceTree = "<group>"; };
 		E33B03CB1D695670007D6F8D /* AZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZSearchBar.h; sourceTree = "<group>"; };
 		E33B03CC1D695670007D6F8D /* AZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZSearchBar.m; sourceTree = "<group>"; };
 		E33B03CE1D69E3F7007D6F8D /* AZDropMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZDropMenuController.h; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		E30A94D11D67ADD100388801 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E3B1FDFC1D6D63EC00731581 /* Version character（版本特性） */,
 				E3C7700C1D684CDE0076F211 /* Home(首页） */,
 				E3C7700B1D684CD90076F211 /* Message(消息） */,
 				E3C7700A1D684CD10076F211 /* Discover（发现） */,
@@ -152,6 +156,13 @@
 				E3C7701A1D684F050076F211 /* Category */,
 			);
 			name = "Main（主要）";
+			sourceTree = "<group>";
+		};
+		E3B1FDFC1D6D63EC00731581 /* Version character（版本特性） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Version character（版本特性）";
 			sourceTree = "<group>";
 		};
 		E3C770091D684CCC0076F211 /* Profile（我） */ = {
@@ -333,6 +344,8 @@
 			children = (
 				E33B03CB1D695670007D6F8D /* AZSearchBar.h */,
 				E33B03CC1D695670007D6F8D /* AZSearchBar.m */,
+				E30BAF461D6B2D950015190F /* AZTabBar.h */,
+				E30BAF471D6B2D950015190F /* AZTabBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -427,6 +440,7 @@
 				E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */,
 				E30A94BA1D67A97600388801 /* main.m in Sources */,
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
+				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,
 				E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */,
 				E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */,

@@ -12,8 +12,9 @@
 #import "AZDiscoverViewController.h"
 #import "AZProfileViewController.h"
 #import "AZNavigationController.h"
+#import "AZTabBar.h"
 
-@interface AZTabBarController ()
+@interface AZTabBarController ()<AZTabBarDelegate>
 
 @end
 
@@ -35,8 +36,14 @@
     AZProfileViewController *profile=[[AZProfileViewController alloc]init];
     [self addchildvc:profile title:@"我" image:@"tabbar_profile" selectedImage:@"tabbar_profile_selected"];
     
+    //添加自定义tabBar
+    AZTabBar *tabBar=[[AZTabBar alloc]init];
+    tabBar.delegate=self;
+    [self setValue:tabBar forKeyPath:@"tabBar"];
+    
 
 }
+
 
 
 /**
@@ -70,8 +77,15 @@
     
     [self addChildViewController:navi];
     
-    
-    
+}
+
+#pragma mark-实现AZTabBar的代理方法
+-(void)AZTabBarDidClickPlusBtn:(AZTabBar *)tabBar
+{
+
+    UIViewController *vc=[[UIViewController alloc]init];
+    vc.view.backgroundColor=[UIColor redColor];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
