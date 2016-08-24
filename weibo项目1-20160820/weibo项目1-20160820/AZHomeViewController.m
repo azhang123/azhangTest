@@ -8,12 +8,11 @@
 
 #import "AZHomeViewController.h"
 #import "UIBarButtonItem+Extension.h"
-#import "UIView+Extension.h"
 #import "AZSearchBar.h"
 #import "AZDropMenuController.h"
 #import "AZTitleMenuController.h"
 
-@interface AZHomeViewController ()
+@interface AZHomeViewController ()<AZDropMenuControllerDelegate>
 
 @end
 
@@ -37,6 +36,7 @@
     titleButton.titleLabel.font=[UIFont systemFontOfSize:17];
     
     [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     
     //设置按钮文字和图片的排布
     [titleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 40)];
@@ -51,17 +51,18 @@
 /**
  *  下拉按钮的点击方法
  */
--(void)titleClick:(UIButton *)button
+-(void)titleClick:(UIButton *)buttons
 {
     //新建下拉菜单视图控制器
     AZDropMenuController *dropMenu=[AZDropMenuController menu];
+    dropMenu.delegate=self;
     //新建下拉菜单里的内容视图控制器
     AZTitleMenuController *vc=[[AZTitleMenuController alloc]init];
     vc.view.height=44*3;
     
     dropMenu.contentController=vc;
     
-    [dropMenu showFrom:button];
+    [dropMenu showFrom:buttons];
     
 
     
@@ -104,58 +105,27 @@
     return 0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+#pragma mark-AZDropDownMenu的代理方法
+/**
+ *  下拉菜单图片向上
+ */
+-(void)dropDownMenuDidShow:(AZDropMenuController *)menu
+{
+    UIButton *buttons=(UIButton *)self.navigationItem.titleView;
+    buttons.selected=YES;
+    MYLog(@"haha");
     
-    // Configure the cell...
-    
-    return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+/**
+ *  下拉菜单图片向下
+ */
+-(void)dropDownMenuDidDismiss:(AZDropMenuController *)menu
+{
+    UIButton *buttons=(UIButton *)self.navigationItem.titleView;
+    buttons.selected=NO;
+    MYLog(@"haah12");
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

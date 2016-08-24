@@ -7,7 +7,6 @@
 //
 
 #import "AZDropMenuController.h"
-#import "UIView+Extension.h"
 
 @interface AZDropMenuController()
 @property(nonatomic,weak)UIImageView *containView;
@@ -83,6 +82,12 @@
     //设置灰色图片的位置
     self.containView.x=(self.width-self.containView.width)/2;
     self.containView.y=50;
+    //通知外界自己显示了
+    if ([self.delegate respondsToSelector:@selector(dropDownMenuDidShow:)]) {
+        [self.delegate dropDownMenuDidShow:
+         self];
+    }
+    
     
 }
 /**
@@ -90,9 +95,24 @@
  */
 -(void)dismiss
 {
+    if ([self.delegate respondsToSelector:@selector(dropDownMenuDidDismiss:)]) {
+        NSLog(@"haha");
+
+        [self.delegate dropDownMenuDidDismiss:
+         self];
+    }
+    NSLog(@"haha");
+    
     [self removeFromSuperview];
+    
 }
 
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self dismiss];
+}
 
 +(instancetype)menu
 {

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AZDropMenuController;
+@protocol AZDropMenuControllerDelegate <NSObject>
+@optional
+-(void)dropDownMenuDidShow:(AZDropMenuController *)menu;
+-(void)dropDownMenuDidDismiss:(AZDropMenuController *)menu;
+
+@end
 
 @interface AZDropMenuController : UIView
+
+@property(nonatomic,weak) id<AZDropMenuControllerDelegate> delegate;
+
 
 /**
  *  内容
