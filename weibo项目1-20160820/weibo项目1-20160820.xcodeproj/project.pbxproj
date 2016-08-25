@@ -16,6 +16,7 @@
 		E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DC1D67AEBF00388801 /* AZDiscoverViewController.m */; };
 		E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94DF1D67AED800388801 /* AZProfileViewController.m */; };
 		E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E30BAF471D6B2D950015190F /* AZTabBar.m */; };
+		E31CE9DD1D6E83BD008CECA9 /* AZNewfeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = E31CE9DC1D6E83BD008CECA9 /* AZNewfeatureController.m */; };
 		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
@@ -47,6 +48,8 @@
 		E30A94DF1D67AED800388801 /* AZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZProfileViewController.m; sourceTree = "<group>"; };
 		E30BAF461D6B2D950015190F /* AZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTabBar.h; sourceTree = "<group>"; };
 		E30BAF471D6B2D950015190F /* AZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZTabBar.m; sourceTree = "<group>"; };
+		E31CE9DB1D6E83BD008CECA9 /* AZNewfeatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNewfeatureController.h; sourceTree = "<group>"; };
+		E31CE9DC1D6E83BD008CECA9 /* AZNewfeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNewfeatureController.m; sourceTree = "<group>"; };
 		E33B03CB1D695670007D6F8D /* AZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZSearchBar.h; sourceTree = "<group>"; };
 		E33B03CC1D695670007D6F8D /* AZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZSearchBar.m; sourceTree = "<group>"; };
 		E33B03CE1D69E3F7007D6F8D /* AZDropMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZDropMenuController.h; sourceTree = "<group>"; };
@@ -121,7 +124,7 @@
 		E30A94D11D67ADD100388801 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E3B1FDFC1D6D63EC00731581 /* Version character（版本特性） */,
+				E3B1FDFC1D6D63EC00731581 /* Newfeature（版本特性） */,
 				E3C7700C1D684CDE0076F211 /* Home(首页） */,
 				E3C7700B1D684CD90076F211 /* Message(消息） */,
 				E3C7700A1D684CD10076F211 /* Discover（发现） */,
@@ -158,11 +161,13 @@
 			name = "Main（主要）";
 			sourceTree = "<group>";
 		};
-		E3B1FDFC1D6D63EC00731581 /* Version character（版本特性） */ = {
+		E3B1FDFC1D6D63EC00731581 /* Newfeature（版本特性） */ = {
 			isa = PBXGroup;
 			children = (
+				E31CE9DB1D6E83BD008CECA9 /* AZNewfeatureController.h */,
+				E31CE9DC1D6E83BD008CECA9 /* AZNewfeatureController.m */,
 			);
-			name = "Version character（版本特性）";
+			name = "Newfeature（版本特性）";
 			sourceTree = "<group>";
 		};
 		E3C770091D684CCC0076F211 /* Profile（我） */ = {
@@ -429,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */,
+				E31CE9DD1D6E83BD008CECA9 /* AZNewfeatureController.m in Sources */,
 				E30A94BD1D67A97600388801 /* AppDelegate.m in Sources */,
 				E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */,
 				E3C7703B1D6891D10076F211 /* UIView+Extension.m in Sources */,

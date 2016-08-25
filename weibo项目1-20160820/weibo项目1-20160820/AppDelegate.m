@@ -15,6 +15,7 @@
 #import "AZProfileViewController.h"
 #import "AZNavigationController.h"
 #import "AZTabBarController.h"
+#import "AZNewfeatureController.h"
 
 @interface AppDelegate ()
 
@@ -26,10 +27,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //创建窗口
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-    //设置根控制器
-    AZTabBarController *tabvc=[[AZTabBarController alloc]init];
-    self.window.rootViewController=tabvc;
+//    
+//    //获取沙盒信息
+//    NSString *key=@"CFBundleVersion";
+//    //上一次使用的版本号
+//    NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
+//    //当前软件的版本号
+//    NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
+//    if ([lastVersion isEqualToString:currentVersion]) {
+//        
+//        AZTabBarController *tabvc=[[AZTabBarController alloc]init];
+//        self.window.rootViewController=tabvc;
+//        
+//    }else
+//    {
+        self.window.rootViewController=[[AZNewfeatureController alloc]init];
+//        //将当前版本号传给沙盒
+//        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//                
+//    }
     
     //显示窗口
     [self.window makeKeyAndVisible];
