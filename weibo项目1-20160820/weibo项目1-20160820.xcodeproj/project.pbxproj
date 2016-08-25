@@ -20,6 +20,7 @@
 		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
+		E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */; };
 		E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770211D6850E70076F211 /* AZNavigationController.m */; };
 		E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770241D6851BC0076F211 /* AZTabBarController.m */; };
 		E3C770311D686A6C0076F211 /* AZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7702F1D686A6C0076F211 /* AZTestViewController.m */; };
@@ -56,6 +57,8 @@
 		E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDropMenuController.m; sourceTree = "<group>"; };
 		E33B03D41D69E5AE007D6F8D /* AZTitleMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTitleMenuController.h; sourceTree = "<group>"; };
 		E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZTitleMenuController.m; sourceTree = "<group>"; };
+		E3417EAF1D6F1E0600348210 /* AZOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZOAuthViewController.h; sourceTree = "<group>"; };
+		E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZOAuthViewController.m; sourceTree = "<group>"; };
 		E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weibo项目1-20160820-Prefix.pch"; sourceTree = "<group>"; };
 		E3C770201D6850E70076F211 /* AZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNavigationController.h; sourceTree = "<group>"; };
 		E3C770211D6850E70076F211 /* AZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNavigationController.m; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		E30A94D11D67ADD100388801 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E3417EAD1D6F1D9C00348210 /* OAuth */,
 				E3B1FDFC1D6D63EC00731581 /* Newfeature（版本特性） */,
 				E3C7700C1D684CDE0076F211 /* Home(首页） */,
 				E3C7700B1D684CD90076F211 /* Message(消息） */,
@@ -159,6 +163,23 @@
 				E3C7701A1D684F050076F211 /* Category */,
 			);
 			name = "Main（主要）";
+			sourceTree = "<group>";
+		};
+		E3417EAD1D6F1D9C00348210 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				E3417EAE1D6F1DD700348210 /* Controller */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
+		E3417EAE1D6F1DD700348210 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3417EAF1D6F1E0600348210 /* AZOAuthViewController.h */,
+				E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		E3B1FDFC1D6D63EC00731581 /* Newfeature（版本特性） */ = {
@@ -448,6 +469,7 @@
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,
+				E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */,
 				E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */,
 				E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */,
 			);

@@ -4,9 +4,7 @@
 //
 //  Created by azhang on 16/8/20.
 //  Copyright © 2016年 azhang. All rights reserved.
-////
-//#define AZColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-//#define AZRandomColor AZColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+
 
 #import "AppDelegate.h"
 #import "AZHomeViewController.h"
@@ -16,6 +14,7 @@
 #import "AZNavigationController.h"
 #import "AZTabBarController.h"
 #import "AZNewfeatureController.h"
+#import "AZOAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +26,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //创建窗口
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    
+    
+    self.window.rootViewController=[[AZOAuthViewController alloc]init];
+    
+    
 //    //获取沙盒信息
 //    NSString *key=@"CFBundleVersion";
 //    //上一次使用的版本号
@@ -38,16 +40,16 @@
 //        
 //        AZTabBarController *tabvc=[[AZTabBarController alloc]init];
 //        self.window.rootViewController=tabvc;
-//        
+//
 //    }else
 //    {
-        self.window.rootViewController=[[AZNewfeatureController alloc]init];
+//        self.window.rootViewController=[[AZNewfeatureController alloc]init];
 //        //将当前版本号传给沙盒
 //        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
 //        [[NSUserDefaults standardUserDefaults] synchronize];
 //                
 //    }
-    
+//    
     //显示窗口
     [self.window makeKeyAndVisible];
     

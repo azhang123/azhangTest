@@ -10,8 +10,8 @@
 #import "AZTabBarController.h"
 #define AZFeatureCount 4
 @interface AZNewfeatureController ()<UIScrollViewDelegate>
-@property(nonatomic,strong)UIScrollView *scrollView;
-@property(nonatomic,strong)UIPageControl *pageControl;
+@property(nonatomic,weak)UIScrollView *scrollView;
+@property(nonatomic,weak)UIPageControl *pageControl;
 
 
 @end
@@ -68,8 +68,6 @@
     
     [self.view addSubview:pageControl];
     self.pageControl=pageControl;
-    
-    
     
 }
 
@@ -138,7 +136,7 @@
  */
 -(void)sharingClick:(UIButton *)button
 {
-    button.selected=!button.selected;
+    button.selected=!button.isSelected;
 }
 
 /**
