@@ -146,7 +146,7 @@
 {
     double page=scrollView.contentOffset.x/scrollView.width;
     self.pageControl.currentPage=(int)(page+0.5);
-    MYLog(@"pagecontrol");
+//    MYLog(@"pagecontrol");
 }
 
 

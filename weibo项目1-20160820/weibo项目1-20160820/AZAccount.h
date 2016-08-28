@@ -19,6 +19,9 @@
 /** uid: 申请应用时的AppKey */
 @property(nonatomic,copy)NSString *uid;
 
+@property(nonatomic,strong)NSDate *create_time;
+
+
 +(instancetype)accountWithDictionary:(NSDictionary *)dict;
 
 @end

@@ -4,7 +4,7 @@
 //
 //  Created by azhang on 16/8/25.
 //  Copyright © 2016年 azhang. All rights reserved.
-//
+// 
 
 #import "AZOAuthViewController.h"
 #import "AFNetworking.h"
@@ -12,6 +12,7 @@
 #import "AZAccount.h"
 #import "AZTabBarController.h"
 #import "AZNewfeatureController.h"
+#import "AZAccountTool.h"
 
 @interface AZOAuthViewController ()<UIWebViewDelegate>
 
@@ -103,36 +104,16 @@
     params[@"code"]=code;
     
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        //获取沙盒存放帐户信息文件的位置
-        NSString *path=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account.archive"];
-        //将返回的账户信息从字典类型转为对象
-        AZAccount *account=[AZAccount accountWithDictionary:responseObject];
-        //将对象归档
-        [NSKeyedArchiver archiveRootObject:account toFile:path];
+        
+        //保存帐户信息
+        [AZAccountTool saveAccount:responseObject];
         
         //判断是否为新版本
         //根据key取出版本号
-        NSString *key=@"CFBundleVersion";
-        NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
-        NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
-        
         UIWindow *window=[UIApplication sharedApplication].keyWindow;
-        //判断当前软件版本号和沙盒中的版本号是否相同
-        if ([currentVersion isEqualToString:lastVersion]) {
-            window.rootViewController=[[AZTabBarController alloc]init];
-        }else
-        {
-            window.rootViewController=[[AZNewfeatureController alloc]init];
-            
-            //将当前版本号传给沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-        }
-        
-        MYLog(@"%@",responseObject);
+        [window switchRootController];
+
         [MBProgressHUD hideHUD];
-        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         MYLog(@"%@",error);

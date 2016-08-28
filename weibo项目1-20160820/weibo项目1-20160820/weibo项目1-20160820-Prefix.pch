@@ -20,6 +20,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "UIView+Extension.h"
+#import "UIWindow+Extension.h"
+
+//沙盒路径
+#define AZAccountPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account.archive"]
 
 //自定义打印
 #ifdef DEBUG  //调试阶段

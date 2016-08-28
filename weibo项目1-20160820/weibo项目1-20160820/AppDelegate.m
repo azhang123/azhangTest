@@ -5,7 +5,6 @@
 //  Created by azhang on 16/8/20.
 //  Copyright © 2016年 azhang. All rights reserved.
 
-
 #import "AppDelegate.h"
 #import "AZHomeViewController.h"
 #import "AZMessageViewController.h"
@@ -16,6 +15,7 @@
 #import "AZNewfeatureController.h"
 #import "AZOAuthViewController.h"
 #import "AZAccount.h"
+#import "AZAccountTool.h"
 
 @interface AppDelegate ()
 
@@ -27,38 +27,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //创建窗口
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-    NSString *path=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"account.archive"];
-    
-    AZAccount *account=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    if (account) {
-        //获取沙盒信息
-        NSString *key=@"CFBundleVersion";
-        //上一次使用的版本号
-        NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
-        //当前软件的版本号
-        NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
-        //判断
-        if ([lastVersion isEqualToString:currentVersion]) {
-            
-            AZTabBarController *tabvc=[[AZTabBarController alloc]init];
-            self.window.rootViewController=tabvc;
-            
-        }else
-        {
-            self.window.rootViewController=[[AZNewfeatureController alloc]init];
-            //将当前版本号传给沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-        }
-
+    //获得帐户的登录信息
+    AZAccount *account=[AZAccountTool account];
+    if (account) {//之前登录过
+        [self.window switchRootController];
+        
     }else
     {
         self.window.rootViewController=[[AZOAuthViewController alloc]init];
-    
     }
-    MYLog(@"%@",path);
+    
     //显示窗口
     [self.window makeKeyAndVisible];
     

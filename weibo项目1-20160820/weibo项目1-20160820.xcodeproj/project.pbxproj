@@ -25,6 +25,8 @@
 		E38614F21D72B78A00CDFE0D /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E38614EE1D72B78A00CDFE0D /* MBProgressHUD.bundle */; };
 		E38614F31D72B78A00CDFE0D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614F01D72B78A00CDFE0D /* MBProgressHUD.m */; };
 		E38614F71D72B9B400CDFE0D /* AZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614F61D72B9B400CDFE0D /* AZAccount.m */; };
+		E38614FB1D72E4A500CDFE0D /* AZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614FA1D72E4A500CDFE0D /* AZAccountTool.m */; };
+		E38614FE1D72F25900CDFE0D /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614FD1D72F25900CDFE0D /* UIWindow+Extension.m */; };
 		E3B7344A1D719D4F0084891F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734491D719D4F0084891F /* CoreGraphics.framework */; };
 		E3B7344C1D719D560084891F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344B1D719D560084891F /* Foundation.framework */; };
 		E3B7344E1D719D5D0084891F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344D1D719D5D0084891F /* UIKit.framework */; };
@@ -92,6 +94,10 @@
 		E38614F01D72B78A00CDFE0D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E38614F51D72B9B400CDFE0D /* AZAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZAccount.h; sourceTree = "<group>"; };
 		E38614F61D72B9B400CDFE0D /* AZAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZAccount.m; sourceTree = "<group>"; };
+		E38614F91D72E4A500CDFE0D /* AZAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZAccountTool.h; sourceTree = "<group>"; };
+		E38614FA1D72E4A500CDFE0D /* AZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZAccountTool.m; sourceTree = "<group>"; };
+		E38614FC1D72F25900CDFE0D /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
+		E38614FD1D72F25900CDFE0D /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weibo项目1-20160820-Prefix.pch"; sourceTree = "<group>"; };
 		E3B734471D719D1C0084891F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E3B734491D719D4F0084891F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -273,7 +279,8 @@
 		E3417EAD1D6F1D9C00348210 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				E38614F41D72B7FD00CDFE0D /* AZAccount */,
+				E38614F81D72E48100CDFE0D /* Tool */,
+				E38614F41D72B7FD00CDFE0D /* Model */,
 				E3417EAE1D6F1DD700348210 /* Controller */,
 			);
 			name = OAuth;
@@ -300,13 +307,22 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		E38614F41D72B7FD00CDFE0D /* AZAccount */ = {
+		E38614F41D72B7FD00CDFE0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E38614F51D72B9B400CDFE0D /* AZAccount.h */,
 				E38614F61D72B9B400CDFE0D /* AZAccount.m */,
 			);
-			name = AZAccount;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E38614F81D72E48100CDFE0D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E38614F91D72E4A500CDFE0D /* AZAccountTool.h */,
+				E38614FA1D72E4A500CDFE0D /* AZAccountTool.m */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		E3B1FDFC1D6D63EC00731581 /* Newfeature（版本特性） */ = {
@@ -485,6 +501,8 @@
 				E3C770371D6874CC0076F211 /* UIBarButtonItem+Extension.m */,
 				E3C770391D6891D10076F211 /* UIView+Extension.h */,
 				E3C7703A1D6891D10076F211 /* UIView+Extension.m */,
+				E38614FC1D72F25900CDFE0D /* UIWindow+Extension.h */,
+				E38614FD1D72F25900CDFE0D /* UIWindow+Extension.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -668,11 +686,13 @@
 				E38614F11D72B78A00CDFE0D /* MBProgressHUD+MJ.m in Sources */,
 				E3B734851D71CB720084891F /* AFHTTPRequestOperation.m in Sources */,
 				E30A94BD1D67A97600388801 /* AppDelegate.m in Sources */,
+				E38614FB1D72E4A500CDFE0D /* AZAccountTool.m in Sources */,
 				E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */,
 				E38614F31D72B78A00CDFE0D /* MBProgressHUD.m in Sources */,
 				E3C7703B1D6891D10076F211 /* UIView+Extension.m in Sources */,
 				E3C770311D686A6C0076F211 /* AZTestViewController.m in Sources */,
 				E3C7703F1D689BE90076F211 /* AZTest2TableController.m in Sources */,
+				E38614FE1D72F25900CDFE0D /* UIWindow+Extension.m in Sources */,
 				E38614F71D72B9B400CDFE0D /* AZAccount.m in Sources */,
 				E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */,
 				E3C770381D6874CC0076F211 /* UIBarButtonItem+Extension.m in Sources */,
