@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4CC8634F1186428DAB4145 /* Pods_weibo__1_20160820.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013924291C31F911BECF2E39 /* Pods_weibo__1_20160820.framework */; };
 		E30A94BA1D67A97600388801 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94B91D67A97600388801 /* main.m */; };
 		E30A94BD1D67A97600388801 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E30A94BC1D67A97600388801 /* AppDelegate.m */; };
 		E30A94C51D67A97600388801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30A94C41D67A97600388801 /* Assets.xcassets */; };
@@ -21,6 +22,26 @@
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
 		E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */; };
+		E3B7344A1D719D4F0084891F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734491D719D4F0084891F /* CoreGraphics.framework */; };
+		E3B7344C1D719D560084891F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344B1D719D560084891F /* Foundation.framework */; };
+		E3B7344E1D719D5D0084891F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344D1D719D5D0084891F /* UIKit.framework */; };
+		E3B734501D719D650084891F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344F1D719D650084891F /* Security.framework */; };
+		E3B734521D719D6D0084891F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734511D719D6D0084891F /* SystemConfiguration.framework */; };
+		E3B734541D719D750084891F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734531D719D750084891F /* ImageIO.framework */; };
+		E3B734561D719D7D0084891F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734551D719D7D0084891F /* QuartzCore.framework */; };
+		E3B734591D719D8D0084891F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734571D719D8D0084891F /* CoreTelephony.framework */; };
+		E3B7345A1D719D8D0084891F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734581D719D8D0084891F /* CoreText.framework */; };
+		E3B7345C1D719DB00084891F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7345B1D719DB00084891F /* libz.tbd */; };
+		E3B7345E1D719DBC0084891F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7345D1D719DBC0084891F /* libsqlite3.0.tbd */; };
+		E3B734851D71CB720084891F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734731D71CB720084891F /* AFHTTPRequestOperation.m */; };
+		E3B734861D71CB720084891F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734751D71CB720084891F /* AFHTTPRequestOperationManager.m */; };
+		E3B734871D71CB720084891F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734771D71CB720084891F /* AFHTTPSessionManager.m */; };
+		E3B734881D71CB720084891F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7347A1D71CB720084891F /* AFNetworkReachabilityManager.m */; };
+		E3B734891D71CB720084891F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7347C1D71CB720084891F /* AFSecurityPolicy.m */; };
+		E3B7348A1D71CB720084891F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7347E1D71CB720084891F /* AFURLConnectionOperation.m */; };
+		E3B7348B1D71CB720084891F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734801D71CB720084891F /* AFURLRequestSerialization.m */; };
+		E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734821D71CB720084891F /* AFURLResponseSerialization.m */; };
+		E3B7348D1D71CB720084891F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B734841D71CB720084891F /* AFURLSessionManager.m */; };
 		E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770211D6850E70076F211 /* AZNavigationController.m */; };
 		E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770241D6851BC0076F211 /* AZTabBarController.m */; };
 		E3C770311D686A6C0076F211 /* AZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7702F1D686A6C0076F211 /* AZTestViewController.m */; };
@@ -32,6 +53,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013924291C31F911BECF2E39 /* Pods_weibo__1_20160820.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo__1_20160820.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9826D4DDA107B8AA8A95A1F3 /* Pods-weibo项目1-20160820.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo项目1-20160820.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo项目1-20160820/Pods-weibo项目1-20160820.release.xcconfig"; sourceTree = "<group>"; };
+		9A18E01D7B239DF5B526D855 /* Pods-weibo项目1-20160820.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo项目1-20160820.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo项目1-20160820/Pods-weibo项目1-20160820.debug.xcconfig"; sourceTree = "<group>"; };
 		E30A94B51D67A97600388801 /* weibo项目1-20160820.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo项目1-20160820.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30A94B91D67A97600388801 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E30A94BB1D67A97600388801 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +84,37 @@
 		E3417EAF1D6F1E0600348210 /* AZOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZOAuthViewController.h; sourceTree = "<group>"; };
 		E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZOAuthViewController.m; sourceTree = "<group>"; };
 		E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weibo项目1-20160820-Prefix.pch"; sourceTree = "<group>"; };
+		E3B734471D719D1C0084891F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E3B734491D719D4F0084891F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E3B7344B1D719D560084891F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E3B7344D1D719D5D0084891F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E3B7344F1D719D650084891F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E3B734511D719D6D0084891F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E3B734531D719D750084891F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		E3B734551D719D7D0084891F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E3B734571D719D8D0084891F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E3B734581D719D8D0084891F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E3B7345B1D719DB00084891F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E3B7345D1D719DBC0084891F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		E3B734721D71CB720084891F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		E3B734731D71CB720084891F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		E3B734741D71CB720084891F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		E3B734751D71CB720084891F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		E3B734761D71CB720084891F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		E3B734771D71CB720084891F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		E3B734781D71CB720084891F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		E3B734791D71CB720084891F /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		E3B7347A1D71CB720084891F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		E3B7347B1D71CB720084891F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		E3B7347C1D71CB720084891F /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		E3B7347D1D71CB720084891F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		E3B7347E1D71CB720084891F /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		E3B7347F1D71CB720084891F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		E3B734801D71CB720084891F /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		E3B734811D71CB720084891F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		E3B734821D71CB720084891F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		E3B734831D71CB720084891F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		E3B734841D71CB720084891F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		E3C770201D6850E70076F211 /* AZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNavigationController.h; sourceTree = "<group>"; };
 		E3C770211D6850E70076F211 /* AZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNavigationController.m; sourceTree = "<group>"; };
 		E3C770231D6851BC0076F211 /* AZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTabBarController.h; sourceTree = "<group>"; };
@@ -81,17 +136,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B7345E1D719DBC0084891F /* libsqlite3.0.tbd in Frameworks */,
+				E3B7345C1D719DB00084891F /* libz.tbd in Frameworks */,
+				E3B734591D719D8D0084891F /* CoreTelephony.framework in Frameworks */,
+				E3B7345A1D719D8D0084891F /* CoreText.framework in Frameworks */,
+				E3B734561D719D7D0084891F /* QuartzCore.framework in Frameworks */,
+				E3B734541D719D750084891F /* ImageIO.framework in Frameworks */,
+				E3B734521D719D6D0084891F /* SystemConfiguration.framework in Frameworks */,
+				E3B734501D719D650084891F /* Security.framework in Frameworks */,
+				E3B7344E1D719D5D0084891F /* UIKit.framework in Frameworks */,
+				E3B7344C1D719D560084891F /* Foundation.framework in Frameworks */,
+				E3B7344A1D719D4F0084891F /* CoreGraphics.framework in Frameworks */,
+				5D4CC8634F1186428DAB4145 /* Pods_weibo__1_20160820.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F523161236B1811B4C6EA47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7345D1D719DBC0084891F /* libsqlite3.0.tbd */,
+				E3B7345B1D719DB00084891F /* libz.tbd */,
+				E3B734571D719D8D0084891F /* CoreTelephony.framework */,
+				E3B734581D719D8D0084891F /* CoreText.framework */,
+				E3B734551D719D7D0084891F /* QuartzCore.framework */,
+				E3B734531D719D750084891F /* ImageIO.framework */,
+				E3B734511D719D6D0084891F /* SystemConfiguration.framework */,
+				E3B7344F1D719D650084891F /* Security.framework */,
+				E3B7344D1D719D5D0084891F /* UIKit.framework */,
+				E3B7344B1D719D560084891F /* Foundation.framework */,
+				E3B734491D719D4F0084891F /* CoreGraphics.framework */,
+				E3B734471D719D1C0084891F /* CoreFoundation.framework */,
+				013924291C31F911BECF2E39 /* Pods_weibo__1_20160820.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C7291611FD69FD593FD15D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A18E01D7B239DF5B526D855 /* Pods-weibo项目1-20160820.debug.xcconfig */,
+				9826D4DDA107B8AA8A95A1F3 /* Pods-weibo项目1-20160820.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E30A94AC1D67A97600388801 = {
 			isa = PBXGroup;
 			children = (
 				E30A94B71D67A97600388801 /* weibo项目1-20160820 */,
 				E30A94B61D67A97600388801 /* Products */,
+				5C7291611FD69FD593FD15D3 /* Pods */,
+				2F523161236B1811B4C6EA47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +287,32 @@
 				E31CE9DC1D6E83BD008CECA9 /* AZNewfeatureController.m */,
 			);
 			name = "Newfeature（版本特性）";
+			sourceTree = "<group>";
+		};
+		E3B734711D71CB720084891F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				E3B734721D71CB720084891F /* AFHTTPRequestOperation.h */,
+				E3B734731D71CB720084891F /* AFHTTPRequestOperation.m */,
+				E3B734741D71CB720084891F /* AFHTTPRequestOperationManager.h */,
+				E3B734751D71CB720084891F /* AFHTTPRequestOperationManager.m */,
+				E3B734761D71CB720084891F /* AFHTTPSessionManager.h */,
+				E3B734771D71CB720084891F /* AFHTTPSessionManager.m */,
+				E3B734781D71CB720084891F /* AFNetworking.h */,
+				E3B734791D71CB720084891F /* AFNetworkReachabilityManager.h */,
+				E3B7347A1D71CB720084891F /* AFNetworkReachabilityManager.m */,
+				E3B7347B1D71CB720084891F /* AFSecurityPolicy.h */,
+				E3B7347C1D71CB720084891F /* AFSecurityPolicy.m */,
+				E3B7347D1D71CB720084891F /* AFURLConnectionOperation.h */,
+				E3B7347E1D71CB720084891F /* AFURLConnectionOperation.m */,
+				E3B7347F1D71CB720084891F /* AFURLRequestSerialization.h */,
+				E3B734801D71CB720084891F /* AFURLRequestSerialization.m */,
+				E3B734811D71CB720084891F /* AFURLResponseSerialization.h */,
+				E3B734821D71CB720084891F /* AFURLResponseSerialization.m */,
+				E3B734831D71CB720084891F /* AFURLSessionManager.h */,
+				E3B734841D71CB720084891F /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 		E3C770091D684CCC0076F211 /* Profile（我） */ = {
@@ -339,6 +463,7 @@
 		E3C7701B1D684F0B0076F211 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E3B734711D71CB720084891F /* AFNetworking */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -390,9 +515,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E30A94CC1D67A97600388801 /* Build configuration list for PBXNativeTarget "weibo项目1-20160820" */;
 			buildPhases = (
+				264883A14736C1C092046282 /* [CP] Check Pods Manifest.lock */,
 				E30A94B11D67A97600388801 /* Sources */,
 				E30A94B21D67A97600388801 /* Frameworks */,
 				E30A94B31D67A97600388801 /* Resources */,
+				BEF2C2B6B095753A16E443FA /* [CP] Embed Pods Frameworks */,
+				1B67F991715B88F8D9409796 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,6 +577,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B67F991715B88F8D9409796 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weibo项目1-20160820/Pods-weibo项目1-20160820-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		264883A14736C1C092046282 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BEF2C2B6B095753A16E443FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weibo项目1-20160820/Pods-weibo项目1-20160820-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E30A94B11D67A97600388801 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -456,6 +632,9 @@
 			files = (
 				E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */,
 				E31CE9DD1D6E83BD008CECA9 /* AZNewfeatureController.m in Sources */,
+				E3B734891D71CB720084891F /* AFSecurityPolicy.m in Sources */,
+				E3B734861D71CB720084891F /* AFHTTPRequestOperationManager.m in Sources */,
+				E3B734851D71CB720084891F /* AFHTTPRequestOperation.m in Sources */,
 				E30A94BD1D67A97600388801 /* AppDelegate.m in Sources */,
 				E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */,
 				E3C7703B1D6891D10076F211 /* UIView+Extension.m in Sources */,
@@ -464,13 +643,19 @@
 				E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */,
 				E3C770381D6874CC0076F211 /* UIBarButtonItem+Extension.m in Sources */,
 				E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */,
+				E3B734871D71CB720084891F /* AFHTTPSessionManager.m in Sources */,
 				E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */,
 				E30A94BA1D67A97600388801 /* main.m in Sources */,
+				E3B7348A1D71CB720084891F /* AFURLConnectionOperation.m in Sources */,
+				E3B7348B1D71CB720084891F /* AFURLRequestSerialization.m in Sources */,
+				E3B7348D1D71CB720084891F /* AFURLSessionManager.m in Sources */,
+				E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */,
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,
 				E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */,
 				E30A94E01D67AED800388801 /* AZProfileViewController.m in Sources */,
+				E3B734881D71CB720084891F /* AFNetworkReachabilityManager.m in Sources */,
 				E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +747,7 @@
 		};
 		E30A94CD1D67A97600388801 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A18E01D7B239DF5B526D855 /* Pods-weibo项目1-20160820.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -571,6 +757,35 @@
 				INFOPLIST_FILE = "weibo项目1-20160820/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/WeiboSDK/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-l\"WeiboSDK\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "azhangLearning.weibo--1-20160820";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(CACHE_ROOT)/SharedPrecompiledHeaders";
@@ -579,6 +794,7 @@
 		};
 		E30A94CE1D67A97600388801 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9826D4DDA107B8AA8A95A1F3 /* Pods-weibo项目1-20160820.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -588,6 +804,35 @@
 				INFOPLIST_FILE = "weibo项目1-20160820/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/WeiboSDK/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-l\"WeiboSDK\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "azhangLearning.weibo--1-20160820";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(CACHE_ROOT)/SharedPrecompiledHeaders";
