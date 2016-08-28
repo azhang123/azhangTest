@@ -15,6 +15,7 @@
 #import "AZTabBarController.h"
 #import "AZNewfeatureController.h"
 #import "AZOAuthViewController.h"
+#import "AZAccount.h"
 
 @interface AppDelegate ()
 
@@ -27,29 +28,37 @@
     //创建窗口
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController=[[AZOAuthViewController alloc]init];
+    NSString *path=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"account.archive"];
     
+    AZAccount *account=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if (account) {
+        //获取沙盒信息
+        NSString *key=@"CFBundleVersion";
+        //上一次使用的版本号
+        NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
+        //当前软件的版本号
+        NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
+        //判断
+        if ([lastVersion isEqualToString:currentVersion]) {
+            
+            AZTabBarController *tabvc=[[AZTabBarController alloc]init];
+            self.window.rootViewController=tabvc;
+            
+        }else
+        {
+            self.window.rootViewController=[[AZNewfeatureController alloc]init];
+            //将当前版本号传给沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+
+    }else
+    {
+        self.window.rootViewController=[[AZOAuthViewController alloc]init];
     
-//    //获取沙盒信息
-//    NSString *key=@"CFBundleVersion";
-//    //上一次使用的版本号
-//    NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
-//    //当前软件的版本号
-//    NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
-//    if ([lastVersion isEqualToString:currentVersion]) {
-//        
-//        AZTabBarController *tabvc=[[AZTabBarController alloc]init];
-//        self.window.rootViewController=tabvc;
-//
-//    }else
-//    {
-//        self.window.rootViewController=[[AZNewfeatureController alloc]init];
-//        //将当前版本号传给沙盒
-//        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//                
-//    }
-//    
+    }
+    MYLog(@"%@",path);
     //显示窗口
     [self.window makeKeyAndVisible];
     

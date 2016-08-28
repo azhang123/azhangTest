@@ -8,6 +8,10 @@
 
 #import "AZOAuthViewController.h"
 #import "AFNetworking.h"
+#import "MBProgressHUD+MJ.h"
+#import "AZAccount.h"
+#import "AZTabBarController.h"
+#import "AZNewfeatureController.h"
 
 @interface AZOAuthViewController ()<UIWebViewDelegate>
 
@@ -37,11 +41,19 @@
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
     MYLog(@"webViewDidStartLoad");
+    [MBProgressHUD showMessage:@"正在加载"];
+    
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     MYLog(@"webViewDidFinishLoad");
+    [MBProgressHUD hideHUD];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUD];
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -58,8 +70,10 @@
         
         //利用code换取一个accessToken
         [self accessTokenWithCode:code];
+        
+        //不加载回调地址
+        return NO;
     }
-    
     return YES;
 }
 
@@ -88,10 +102,42 @@
     params[@"redirect_uri"]=@"http://";
     params[@"code"]=code;
     
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        //获取沙盒存放帐户信息文件的位置
+        NSString *path=[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account.archive"];
+        //将返回的账户信息从字典类型转为对象
+        AZAccount *account=[AZAccount accountWithDictionary:responseObject];
+        //将对象归档
+        [NSKeyedArchiver archiveRootObject:account toFile:path];
+        
+        //判断是否为新版本
+        //根据key取出版本号
+        NSString *key=@"CFBundleVersion";
+        NSString *lastVersion=[[NSUserDefaults standardUserDefaults]objectForKey:key];
+        NSString *currentVersion=[NSBundle mainBundle].infoDictionary[key];
+        
+        UIWindow *window=[UIApplication sharedApplication].keyWindow;
+        //判断当前软件版本号和沙盒中的版本号是否相同
+        if ([currentVersion isEqualToString:lastVersion]) {
+            window.rootViewController=[[AZTabBarController alloc]init];
+        }else
+        {
+            window.rootViewController=[[AZNewfeatureController alloc]init];
+            
+            //将当前版本号传给沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+        
         MYLog(@"%@",responseObject);
+        [MBProgressHUD hideHUD];
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         MYLog(@"%@",error);
+        [MBProgressHUD hideHUD];
+        
     }];
     
     
