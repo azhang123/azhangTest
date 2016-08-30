@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AZAccount.h"
 @class AZAccount;
 @interface AZAccountTool : NSObject
 
 +(AZAccount *)account;
-+(void)saveAccount:(NSDictionary *)dict;
++(void)saveAccount:(AZAccount *)account;
 @end

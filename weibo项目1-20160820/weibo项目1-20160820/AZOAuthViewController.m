@@ -105,9 +105,12 @@
     
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
+        //将返回的账户信息从字典类型转为对象
+        AZAccount *account=[AZAccount accountWithDictionary:responseObject];
+
         //保存帐户信息
-        [AZAccountTool saveAccount:responseObject];
-        
+        [AZAccountTool saveAccount:account];
+
         //判断是否为新版本
         //根据key取出版本号
         UIWindow *window=[UIApplication sharedApplication].keyWindow;

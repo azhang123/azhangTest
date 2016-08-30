@@ -19,6 +19,10 @@
 /** uid: 申请应用时的AppKey */
 @property(nonatomic,copy)NSString *uid;
 
+/** name:用户的昵称 */
+@property(nonatomic,copy)NSString  *name;
+
+/** create_time: 获得OAuth授权的时间*/
 @property(nonatomic,strong)NSDate *create_time;
 
 
