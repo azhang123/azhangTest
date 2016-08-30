@@ -65,6 +65,8 @@
 		E3C6D8CC1D757F0200E714F9 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D8BA1D757F0200E714F9 /* UIImageView+HighlightedWebCache.m */; };
 		E3C6D8CD1D757F0200E714F9 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D8BC1D757F0200E714F9 /* UIImageView+WebCache.m */; };
 		E3C6D8CE1D757F0200E714F9 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D8BE1D757F0200E714F9 /* UIView+WebCacheOperation.m */; };
+		E3C6D8D11D758FE200E714F9 /* AZStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D8D01D758FE200E714F9 /* AZStatus.m */; };
+		E3C6D8D41D758FED00E714F9 /* AZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C6D8D31D758FED00E714F9 /* AZUser.m */; };
 		E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770211D6850E70076F211 /* AZNavigationController.m */; };
 		E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C770241D6851BC0076F211 /* AZTabBarController.m */; };
 		E3C770311D686A6C0076F211 /* AZTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7702F1D686A6C0076F211 /* AZTestViewController.m */; };
@@ -184,6 +186,10 @@
 		E3C6D8BC1D757F0200E714F9 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		E3C6D8BD1D757F0200E714F9 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		E3C6D8BE1D757F0200E714F9 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		E3C6D8CF1D758FE200E714F9 /* AZStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatus.h; sourceTree = "<group>"; };
+		E3C6D8D01D758FE200E714F9 /* AZStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatus.m; sourceTree = "<group>"; };
+		E3C6D8D21D758FED00E714F9 /* AZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZUser.h; sourceTree = "<group>"; };
+		E3C6D8D31D758FED00E714F9 /* AZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZUser.m; sourceTree = "<group>"; };
 		E3C770201D6850E70076F211 /* AZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNavigationController.h; sourceTree = "<group>"; };
 		E3C770211D6850E70076F211 /* AZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNavigationController.m; sourceTree = "<group>"; };
 		E3C770231D6851BC0076F211 /* AZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTabBarController.h; sourceTree = "<group>"; };
@@ -508,6 +514,10 @@
 		E3C7700F1D684D480076F211 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E3C6D8CF1D758FE200E714F9 /* AZStatus.h */,
+				E3C6D8D01D758FE200E714F9 /* AZStatus.m */,
+				E3C6D8D21D758FED00E714F9 /* AZUser.h */,
+				E3C6D8D31D758FED00E714F9 /* AZUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -806,6 +816,7 @@
 				E3C770221D6850E70076F211 /* AZNavigationController.m in Sources */,
 				E3B734871D71CB720084891F /* AFHTTPSessionManager.m in Sources */,
 				E3C6D8C81D757F0200E714F9 /* UIButton+WebCache.m in Sources */,
+				E3C6D8D41D758FED00E714F9 /* AZUser.m in Sources */,
 				E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */,
 				E3C6D8C41D757F0200E714F9 /* SDWebImageDownloader.m in Sources */,
 				E3C6D8C01D757F0200E714F9 /* NSData+ImageContentType.m in Sources */,
@@ -819,6 +830,7 @@
 				E3C6D8CA1D757F0200E714F9 /* UIImage+MultiFormat.m in Sources */,
 				E3C6D8C21D757F0200E714F9 /* SDWebImageCompat.m in Sources */,
 				E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */,
+				E3C6D8D11D758FE200E714F9 /* AZStatus.m in Sources */,
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,

@@ -15,13 +15,26 @@
 #import "AFNetworking.h"
 #import "AZTitleButton.h"
 #import "UIImageView+WebCache.h"
+#import "AZStatus.h"
+#import "AZUser.h"
 
 @interface AZHomeViewController ()<AZDropMenuControllerDelegate>
-@property(nonatomic,strong)NSArray *statuses;
+/**
+ *  微博数组(里面放的都是AZStatus模型，一个AZStatus对象代表一条微博)
+ */
+@property(nonatomic,strong)NSMutableArray *statuses;
 
 @end
 
 @implementation AZHomeViewController
+
+-(NSMutableArray *)statuses
+{
+    if (!_statuses) {
+        self.statuses=[NSMutableArray array];
+    }
+    return _statuses;
+}
 
 - (void)viewDidLoad {
     
@@ -41,13 +54,19 @@
     AZAccount *account=[AZAccountTool account];
     NSMutableDictionary *params=[NSMutableDictionary dictionary];
     params[@"access_token"]=account.access_token ;
-    params[@"count"]=@10;
+//    params[@"count"]=@10;
     
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         MYLog(@"%@",responseObject);
-        NSArray *statuses=responseObject[@"statuses"];
-        self.statuses=statuses;
+        //取得微博数组
+        NSArray *dictArray=responseObject[@"statuses"];
+        //添加微博
+        for (NSDictionary *dict in dictArray) {
+            AZStatus *status=[AZStatus statusWithDict:dict];
+            [self.statuses addObject:status];
+        }
+        
         [self.tableView reloadData];
 
         
@@ -96,11 +115,12 @@
     [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
         MYLog(@"%@",responseObject);
-        NSString *name=responseObject[@"name"];
+    
+        AZUser *user=[AZUser userWithDict:responseObject];
         UIButton *titleBtn=(UIButton *)self.navigationItem.titleView;
-        [titleBtn setTitle:name forState:UIControlStateNormal];
+        [titleBtn setTitle:user.name forState:UIControlStateNormal];
         
-        account.name=name;
+        account.name=user.name;
         [AZAccountTool saveAccount:account];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -167,17 +187,21 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    //获得微博和用户信息
-    NSDictionary *status=self.statuses[indexPath.row];
-    NSDictionary *user=status[@"user"];
+//    //获得微博和用户信息
+//    NSDictionary *status=self.statuses[indexPath.row];
+//    NSDictionary *user=status[@"user"];
     
     //设置微博文字和图片
-    cell.textLabel.text=user[@"name"];
-    cell.detailTextLabel.text=status[@"text"];
-    NSString *imageURL=user[@"profile_image_url"];
-    UIImage *placeHolder=[UIImage imageNamed:@"avatar_default"];
+//    cell.textLabel.text=user[@"name"];
+//    cell.detailTextLabel.text=status[@"text"];
+//    NSString *imageURL=user[@"profile_image_url"];
+    AZStatus *status=self.statuses[indexPath.row];
+    AZUser *user=status.user;
+    cell.textLabel.text=user.name;
+    cell.detailTextLabel.text=status.text;
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHolder];
+    UIImage *placeHolder=[UIImage imageNamed:@"avatar_default"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:placeHolder];
     
     return cell;
 }
