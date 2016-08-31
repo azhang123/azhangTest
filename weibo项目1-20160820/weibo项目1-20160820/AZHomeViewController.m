@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import "AZStatus.h"
 #import "AZUser.h"
+#import "MJExtension.h"
 
 @interface AZHomeViewController ()<AZDropMenuControllerDelegate>
 /**
@@ -42,8 +43,56 @@
     [self setupNav];
     [self setupUserinfo];
     [self loadStatus];
+    [self setupRefresh];
    
 }
+
+/**
+ *  集成刷新模块
+ */
+-(void)setupRefresh
+{
+    UIRefreshControl *control=[[UIRefreshControl alloc]init];
+    [control addTarget:self action:@selector(loadRefreshStatus:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:control];
+
+}
+
+/**
+ *  刷新微博操作
+ */
+-(void)loadRefreshStatus:(UIRefreshControl *)control
+{
+    //请求管理者
+    AFHTTPRequestOperationManager *mgr=[[AFHTTPRequestOperationManager alloc]init];
+    //设置请求参数
+    AZAccount *account=[AZAccountTool account];
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    params[@"access_token"]=account.access_token;
+    AZStatus *firstStatus=[self.statuses firstObject];
+    if (firstStatus) {
+        params[@"since_id"]=firstStatus.id_str;
+    }
+    //发起请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        MYLog(@"responseObject%@",responseObject);
+        //获得新微博
+        NSArray *newStatuses=[AZStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //插入新微博
+        NSRange range=NSMakeRange(0, newStatuses.count);
+        NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statuses insertObjects:newStatuses atIndexes:inset];
+        //更新微博
+        [self.tableView reloadData];
+        [control endRefreshing];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        MYLog(@"请求失败:%@",error);
+        [control endRefreshing];
+    }];
+}
+
 
 -(void)loadStatus
 {
@@ -54,19 +103,20 @@
     AZAccount *account=[AZAccountTool account];
     NSMutableDictionary *params=[NSMutableDictionary dictionary];
     params[@"access_token"]=account.access_token ;
-//    params[@"count"]=@10;
+    params[@"count"]=@10;
     
     
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        MYLog(@"%@",responseObject);
+//        MYLog(@"%@",responseObject);
         //取得微博数组
         NSArray *dictArray=responseObject[@"statuses"];
         //添加微博
-        for (NSDictionary *dict in dictArray) {
-            AZStatus *status=[AZStatus statusWithDict:dict];
-            [self.statuses addObject:status];
-        }
-        
+//        for (NSDictionary *dict in dictArray) {
+//             AZStatus *status=[AZStatus statusWithDict:dict];
+//            [self.statuses addObject:status];
+//        }
+        NSArray *array=[AZStatus objectArrayWithKeyValuesArray:dictArray];
+        [self.statuses addObjectsFromArray:array];
         [self.tableView reloadData];
 
         
@@ -114,9 +164,9 @@
 
     [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
-        MYLog(@"%@",responseObject);
+//        MYLog(@"%@",responseObject);
     
-        AZUser *user=[AZUser userWithDict:responseObject];
+        AZUser *user=[AZUser objectWithKeyValues:responseObject];
         UIButton *titleBtn=(UIButton *)self.navigationItem.titleView;
         [titleBtn setTitle:user.name forState:UIControlStateNormal];
         

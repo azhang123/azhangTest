@@ -10,13 +10,13 @@
 
 @implementation AZUser
 
-+(AZUser *)userWithDict:(NSDictionary *)dict
-{
-    AZUser *user=[[self alloc]init];
-    user.name=dict[@"name"];
-    user.uid=dict[@"uid"];
-    user.profile_image_url=dict[@"profile_image_url"];
-    
-    return user;
-}
+//+(AZUser *)userWithDict:(NSDictionary *)dict
+//{
+//    AZUser *user=[[self alloc]init];
+//    user.name=dict[@"name"];
+//    user.uid=dict[@"uid"];
+//    user.profile_image_url=dict[@"profile_image_url"];
+//    
+//    return user;
+//}
 @end

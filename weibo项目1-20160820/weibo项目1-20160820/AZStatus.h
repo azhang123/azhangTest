@@ -19,6 +19,6 @@
 /**	object	微博作者的用户信息字段 */
 @property(nonatomic,strong)AZUser *user;
 
-+(AZStatus *)statusWithDict:(NSDictionary *)dict;
+//+(AZStatus *)statusWithDict:(NSDictionary *)dict;
 
 @end

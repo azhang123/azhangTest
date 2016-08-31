@@ -11,13 +11,13 @@
 
 @implementation AZStatus
 
-+(AZStatus *)statusWithDict:(NSDictionary *)dict
-{
-    AZStatus *status=[[self alloc]init];
-    status.text=dict[@"text"];
-    status.id_str=dict[@"id_str"];
-    status.user=[AZUser userWithDict:dict[@"user"]];
-    
-    return status;
-}
+//+(AZStatus *)statusWithDict:(NSDictionary *)dict
+//{
+//    AZStatus *status=[[self alloc]init];
+//    status.text=dict[@"text"];
+//    status.id_str=dict[@"id_str"];
+//    status.user=[AZUser userWithDict:dict[@"user"]];
+//    
+//    return status;
+//}
 @end
