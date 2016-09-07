@@ -8,8 +8,14 @@
 
 #import "AZStatus.h"
 #import "AZUser.h"
+#import "AZPhoto.h"
 
 @implementation AZStatus
+
+-(NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls":[AZPhoto class]};
+}
 
 //+(AZStatus *)statusWithDict:(NSDictionary *)dict
 //{

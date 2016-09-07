@@ -20,6 +20,7 @@
 		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
+		E33D8D0B1D7F8DFC0025DF57 /* AZPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E33D8D0A1D7F8DFC0025DF57 /* AZPhoto.m */; };
 		E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */; };
 		E38614F11D72B78A00CDFE0D /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614ED1D72B78A00CDFE0D /* MBProgressHUD+MJ.m */; };
 		E38614F21D72B78A00CDFE0D /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E38614EE1D72B78A00CDFE0D /* MBProgressHUD.bundle */; };
@@ -75,6 +76,8 @@
 		E3C7703B1D6891D10076F211 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7703A1D6891D10076F211 /* UIView+Extension.m */; };
 		E3C7703F1D689BE90076F211 /* AZTest2TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C7703D1D689BE90076F211 /* AZTest2TableController.m */; };
 		E3C770401D689BE90076F211 /* AZTest2TableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C7703E1D689BE90076F211 /* AZTest2TableController.xib */; };
+		E3D7805F1D7C6D90009718F4 /* AZStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D7805E1D7C6D90009718F4 /* AZStatusCell.m */; };
+		E3D780621D7C703B009718F4 /* AZStatusFram.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D780611D7C703B009718F4 /* AZStatusFram.m */; };
 		E3E626831D75C6A600F9C127 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E6266D1D75C6A600F9C127 /* MJArgument.m */; };
 		E3E626841D75C6A600F9C127 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E6266F1D75C6A600F9C127 /* MJConst.m */; };
 		E3E626851D75C6A600F9C127 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E626721D75C6A600F9C127 /* MJFoundation.m */; };
@@ -116,6 +119,8 @@
 		E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZDropMenuController.m; sourceTree = "<group>"; };
 		E33B03D41D69E5AE007D6F8D /* AZTitleMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTitleMenuController.h; sourceTree = "<group>"; };
 		E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZTitleMenuController.m; sourceTree = "<group>"; };
+		E33D8D091D7F8DFC0025DF57 /* AZPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZPhoto.h; sourceTree = "<group>"; };
+		E33D8D0A1D7F8DFC0025DF57 /* AZPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZPhoto.m; sourceTree = "<group>"; };
 		E3417EAF1D6F1E0600348210 /* AZOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZOAuthViewController.h; sourceTree = "<group>"; };
 		E3417EB01D6F1E0600348210 /* AZOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZOAuthViewController.m; sourceTree = "<group>"; };
 		E38614EC1D72B78A00CDFE0D /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -215,6 +220,10 @@
 		E3C7703C1D689BE90076F211 /* AZTest2TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZTest2TableController.h; sourceTree = "<group>"; };
 		E3C7703D1D689BE90076F211 /* AZTest2TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZTest2TableController.m; sourceTree = "<group>"; };
 		E3C7703E1D689BE90076F211 /* AZTest2TableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AZTest2TableController.xib; sourceTree = "<group>"; };
+		E3D7805D1D7C6D90009718F4 /* AZStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatusCell.h; sourceTree = "<group>"; };
+		E3D7805E1D7C6D90009718F4 /* AZStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatusCell.m; sourceTree = "<group>"; };
+		E3D780601D7C703B009718F4 /* AZStatusFram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatusFram.h; sourceTree = "<group>"; };
+		E3D780611D7C703B009718F4 /* AZStatusFram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatusFram.m; sourceTree = "<group>"; };
 		E3E6266C1D75C6A600F9C127 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		E3E6266D1D75C6A600F9C127 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		E3E6266E1D75C6A600F9C127 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -541,6 +550,8 @@
 				E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */,
 				E3C6D8991D7558D800E714F9 /* AZTitleButton.h */,
 				E3C6D89A1D7558D800E714F9 /* AZTitleButton.m */,
+				E3D7805D1D7C6D90009718F4 /* AZStatusCell.h */,
+				E3D7805E1D7C6D90009718F4 /* AZStatusCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -550,8 +561,12 @@
 			children = (
 				E3C6D8CF1D758FE200E714F9 /* AZStatus.h */,
 				E3C6D8D01D758FE200E714F9 /* AZStatus.m */,
+				E33D8D091D7F8DFC0025DF57 /* AZPhoto.h */,
+				E33D8D0A1D7F8DFC0025DF57 /* AZPhoto.m */,
 				E3C6D8D21D758FED00E714F9 /* AZUser.h */,
 				E3C6D8D31D758FED00E714F9 /* AZUser.m */,
+				E3D780601D7C703B009718F4 /* AZStatusFram.h */,
+				E3D780611D7C703B009718F4 /* AZStatusFram.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -860,6 +875,7 @@
 				E3C6D8981D754E4A00E714F9 /* Foundation+Log.m in Sources */,
 				E3B734851D71CB720084891F /* AFHTTPRequestOperation.m in Sources */,
 				E30A94BD1D67A97600388801 /* AppDelegate.m in Sources */,
+				E3D7805F1D7C6D90009718F4 /* AZStatusCell.m in Sources */,
 				E38614FB1D72E4A500CDFE0D /* AZAccountTool.m in Sources */,
 				E30A94DD1D67AEBF00388801 /* AZDiscoverViewController.m in Sources */,
 				E38614F31D72B78A00CDFE0D /* MBProgressHUD.m in Sources */,
@@ -876,6 +892,7 @@
 				E3C6D8CC1D757F0200E714F9 /* UIImageView+HighlightedWebCache.m in Sources */,
 				E3C6D8C91D757F0200E714F9 /* UIImage+GIF.m in Sources */,
 				E3C770251D6851BC0076F211 /* AZTabBarController.m in Sources */,
+				E3D780621D7C703B009718F4 /* AZStatusFram.m in Sources */,
 				E3E626851D75C6A600F9C127 /* MJFoundation.m in Sources */,
 				E3E6268B1D75C6A600F9C127 /* NSObject+MJCoding.m in Sources */,
 				E3C770381D6874CC0076F211 /* UIBarButtonItem+Extension.m in Sources */,
@@ -901,6 +918,7 @@
 				E3C6D89B1D7558D800E714F9 /* AZTitleButton.m in Sources */,
 				E3C6D8C71D757F0200E714F9 /* SDWebImagePrefetcher.m in Sources */,
 				E3C6D8CA1D757F0200E714F9 /* UIImage+MultiFormat.m in Sources */,
+				E33D8D0B1D7F8DFC0025DF57 /* AZPhoto.m in Sources */,
 				E3C6D8C21D757F0200E714F9 /* SDWebImageCompat.m in Sources */,
 				E3E626861D75C6A600F9C127 /* MJIvar.m in Sources */,
 				E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */,

@@ -11,13 +11,26 @@
 @interface AZStatus : NSObject
 
 /** idstr 	string 	字符串型的微博ID  */
-@property(nonatomic,copy)NSString *id_str;
+@property(nonatomic,copy)NSString *idstr;
 
 /** text 	string 	微博信息内容  */
 @property(nonatomic,copy)NSString *text;
 
 /**	object	微博作者的用户信息字段 */
 @property(nonatomic,strong)AZUser *user;
+
+/** string 	微博创建时间 */
+@property(nonatomic,copy)NSString *created_at;
+
+/** string 	微博来源 */
+@property(nonatomic,copy)NSString *source;
+
+/** NSArray 微博配图 */
+@property(nonatomic,strong)NSArray *pic_urls;
+
+
+@property(nonatomic,assign,readonly)int mem;
+
 
 //+(AZStatus *)statusWithDict:(NSDictionary *)dict;
 

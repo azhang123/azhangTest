@@ -10,6 +10,13 @@
 
 @implementation AZUser
 
+//判断是否是会员并对其进行设置
+-(void)setMbtype:(int)mbtype
+{
+    _mbtype=mbtype;
+    self.isVip=mbtype>2;
+}
+
 //+(AZUser *)userWithDict:(NSDictionary *)dict
 //{
 //    AZUser *user=[[self alloc]init];
