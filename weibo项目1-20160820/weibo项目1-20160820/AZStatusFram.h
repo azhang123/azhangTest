@@ -15,6 +15,8 @@
 #define AZUserSourceFont [UIFont systemFontOfSize:12]
 /** 微博正文字体 */
 #define AZUserContentFont [UIFont systemFontOfSize:14]
+/** 转发微博正文字体 */
+#define AZRetweetedContentFont [UIFont systemFontOfSize:14]
 
 
 @class AZStatus;
@@ -36,10 +38,23 @@
 /** 正文 */
 @property(nonatomic,assign)CGRect contentLabelF;
 
+/** 转发微博整体 */
+@property(nonatomic,assign)CGRect retweeted_viewF;
+
+/** 转发正文 */
+@property(nonatomic,assign)CGRect retweeted_contentLabelF;
+
+/** 转发配图 */
+@property(nonatomic,assign)CGRect retweeted_photoViewF;
+
+/** 微博模型 */
 @property(nonatomic,strong)AZStatus *status;
 
 /** cell的高度 */
 @property(nonatomic,assign)CGFloat cellHeight;
+
+/** 底部的工具条 */
+@property(nonatomic,assign)CGRect toolBarF;
 
 
 @end

@@ -42,11 +42,11 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+//    self.tableView.contentInset=UIEdgeInsetsMake(10, 0, 0, 0);
     [self setupNav];
     [self setupUserinfo];
 //    [self loadStatus];
     [self setupRefresh];
-    
     NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:105 target:self selector:@selector(acquireUnreadInfo) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
    
@@ -70,7 +70,7 @@
     //3.发送请求
     [mgr GET:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         NSString *infoCount=[responseObject[@"status"]description];
-        MYLog(@"成功调用了acquireUnreadInfo方法：%@",responseObject);
+//        MYLog(@"成功调用了acquireUnreadInfo方法：%@",responseObject);
     
     //注册远程推送通知
         UIUserNotificationType  types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
@@ -134,39 +134,59 @@
  */
 -(void)loadRefreshStatus:(UIRefreshControl *)control
 {
-    //请求管理者
-    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
-    //设置请求参数
-    AZAccount *account=[AZAccountTool account];
-    NSMutableDictionary *params=[NSMutableDictionary dictionary];
-    params[@"access_token"]=account.access_token;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(),^{
+        
+        NSDictionary *responseObject=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"fakeStatus" ofType:@"plist"]];
+                NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
+        //        MYLog(@"%@",responseObject);
+                //插入新微博
+                NSRange range=NSMakeRange(0, newStatusFrames.count);
+        //        MYLog(@"%d",newStatusFrames.count);
+                NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
+                [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
+                //更新微博
+                [self.tableView reloadData];
+                [control endRefreshing];
+        
+                //显示微博刷新数量
+                [self presentStatusRefreshingCount:newStatusFrames.count];
+        
+    });
     
-    AZStatusFram *firstStatusF=[self.statusFrames firstObject];
-    if (firstStatusF.status) {
-        params[@"since_id"]=firstStatusF.status.idstr;
-    }
-    //发起请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-//        MYLog(@"responseObject%@",responseObject);
-        //获得新微博的frame
-        NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
-        MYLog(@"%@",responseObject);
-        //插入新微博
-        NSRange range=NSMakeRange(0, newStatusFrames.count);
-        MYLog(@"%d",newStatusFrames.count);
-        NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
-        [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
-        //更新微博
-        [self.tableView reloadData];
-        [control endRefreshing];
-        
-        //显示微博刷新数量
-        [self presentStatusRefreshingCount:newStatusFrames.count];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        MYLog(@"请求失败:%@",error);
-        [control endRefreshing];
-    }];
+    
+//    //请求管理者
+//    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+//    //设置请求参数
+//    AZAccount *account=[AZAccountTool account];
+//    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+//    params[@"access_token"]=account.access_token;
+//    
+//    AZStatusFram *firstStatusF=[self.statusFrames firstObject];
+//    if (firstStatusF.status) {
+//        params[@"since_id"]=firstStatusF.status.idstr;
+//    }
+//    //发起请求
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+////        MYLog(@"responseObject%@",responseObject);
+//        //获得新微博的frame
+//        NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
+////        MYLog(@"%@",responseObject);
+//        //插入新微博
+//        NSRange range=NSMakeRange(0, newStatusFrames.count);
+////        MYLog(@"%d",newStatusFrames.count);
+//        NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
+//        [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
+//        //更新微博
+//        [self.tableView reloadData];
+//        [control endRefreshing];
+//        
+//        //显示微博刷新数量
+//        [self presentStatusRefreshingCount:newStatusFrames.count];
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        MYLog(@"请求失败:%@",error);
+//        [control endRefreshing];
+//    }];
 }
 /**
  *  显示微博刷新数量
@@ -281,7 +301,7 @@
 
     [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
-        MYLog(@"%@",responseObject);
+//        MYLog(@"%@",responseObject);
     
         AZUser *user=[AZUser objectWithKeyValues:responseObject];
         UIButton *titleBtn=(UIButton *)self.navigationItem.titleView;
@@ -351,6 +371,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AZStatusCell *cell=[AZStatusCell cellWithTableView:tableView];
+    
 //    //获得微博和用户信息
 //    NSDictionary *status=self.statuses[indexPath.row];
 //    NSDictionary *user=status[@"user"];
@@ -380,7 +401,7 @@
 {
     UIButton *buttons=(UIButton *)self.navigationItem.titleView;
     buttons.selected=YES;
-    MYLog(@"haha");
+//    MYLog(@"haha");
     
 }
 
@@ -391,7 +412,7 @@
 {
     UIButton *buttons=(UIButton *)self.navigationItem.titleView;
     buttons.selected=NO;
-    MYLog(@"haah12");
+//    MYLog(@"haah12");
 }
 
 

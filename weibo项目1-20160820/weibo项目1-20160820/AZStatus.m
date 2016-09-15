@@ -17,6 +17,27 @@
     return @{@"pic_urls":[AZPhoto class]};
 }
 
+//Tue Sep 13 21:49:10 +0800 2016
+
+-(NSString *)created_at
+{
+    NSDateFormatter *fmt=[[NSDateFormatter alloc]init];
+    fmt.locale=[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"];
+    fmt.dateFormat=@"EEE MMM dd HH:mm:ss Z yyyy";
+    
+    NSDate *creatDate=[fmt dateFromString:_created_at];
+    NSDate *now=[NSDate date];
+    NSCalendar *calendar=[NSCalendar currentCalendar];
+    NSCalendarUnit unit=NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
+    NSDateComponents *cmps=[calendar components:unit fromDate:creatDate toDate:now options:0];
+    MYLog(@"%@,%@,%@",cmps,creatDate,now);
+    
+    return _created_at;
+    
+}
+
+
+
 //+(AZStatus *)statusWithDict:(NSDictionary *)dict
 //{
 //    AZStatus *status=[[self alloc]init];

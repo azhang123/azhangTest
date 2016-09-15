@@ -28,8 +28,20 @@
 /** NSArray 微博配图 */
 @property(nonatomic,strong)NSArray *pic_urls;
 
-
 @property(nonatomic,assign,readonly)int mem;
+
+/** 转发微博 */
+@property(nonatomic,strong)AZStatus *retweeted_status;
+
+/** 评论数 */
+@property(nonatomic,assign)int comments_count;
+/** 转发数 */
+@property(nonatomic,assign)int reposts_count;
+/** 点赞数 */
+@property(nonatomic,assign)int attitudes_count;
+
+
+
 
 
 //+(AZStatus *)statusWithDict:(NSDictionary *)dict;

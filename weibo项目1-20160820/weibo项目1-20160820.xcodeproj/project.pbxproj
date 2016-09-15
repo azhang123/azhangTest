@@ -28,6 +28,7 @@
 		E38614F71D72B9B400CDFE0D /* AZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614F61D72B9B400CDFE0D /* AZAccount.m */; };
 		E38614FB1D72E4A500CDFE0D /* AZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614FA1D72E4A500CDFE0D /* AZAccountTool.m */; };
 		E38614FE1D72F25900CDFE0D /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E38614FD1D72F25900CDFE0D /* UIWindow+Extension.m */; };
+		E38C64C51D823EE600EF0451 /* AZStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E38C64C41D823EE600EF0451 /* AZStatusToolBar.m */; };
 		E3B7344A1D719D4F0084891F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B734491D719D4F0084891F /* CoreGraphics.framework */; };
 		E3B7344C1D719D560084891F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344B1D719D560084891F /* Foundation.framework */; };
 		E3B7344E1D719D5D0084891F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7344D1D719D5D0084891F /* UIKit.framework */; };
@@ -89,6 +90,7 @@
 		E3E6268B1D75C6A600F9C127 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E6267E1D75C6A600F9C127 /* NSObject+MJCoding.m */; };
 		E3E6268C1D75C6A600F9C127 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E626801D75C6A600F9C127 /* NSObject+MJKeyValue.m */; };
 		E3E6268D1D75C6A600F9C127 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E626821D75C6A600F9C127 /* NSObject+MJMember.m */; };
+		E3F429A61D884BC50001AF77 /* fakeStatus.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3F429A51D884BC50001AF77 /* fakeStatus.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		E38614FA1D72E4A500CDFE0D /* AZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZAccountTool.m; sourceTree = "<group>"; };
 		E38614FC1D72F25900CDFE0D /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		E38614FD1D72F25900CDFE0D /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
+		E38C64C31D823EE600EF0451 /* AZStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatusToolBar.h; sourceTree = "<group>"; };
+		E38C64C41D823EE600EF0451 /* AZStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatusToolBar.m; sourceTree = "<group>"; };
 		E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "weibo项目1-20160820-Prefix.pch"; sourceTree = "<group>"; };
 		E3B734471D719D1C0084891F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E3B734491D719D4F0084891F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -247,6 +251,7 @@
 		E3E626801D75C6A600F9C127 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		E3E626811D75C6A600F9C127 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		E3E626821D75C6A600F9C127 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		E3F429A51D884BC50001AF77 /* fakeStatus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fakeStatus.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +336,7 @@
 			children = (
 				E3960B321D682335006C041C /* weibo项目1-20160820-Prefix.pch */,
 				E30A94C91D67A97600388801 /* Info.plist */,
+				E3F429A51D884BC50001AF77 /* fakeStatus.plist */,
 				E30A94CF1D67ACB800388801 /* Images.xcassets */,
 				E30A94C41D67A97600388801 /* Assets.xcassets */,
 				E30A94B91D67A97600388801 /* main.m */,
@@ -552,6 +558,8 @@
 				E3C6D89A1D7558D800E714F9 /* AZTitleButton.m */,
 				E3D7805D1D7C6D90009718F4 /* AZStatusCell.h */,
 				E3D7805E1D7C6D90009718F4 /* AZStatusCell.m */,
+				E38C64C31D823EE600EF0451 /* AZStatusToolBar.h */,
+				E38C64C41D823EE600EF0451 /* AZStatusToolBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -805,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C770401D689BE90076F211 /* AZTest2TableController.xib in Resources */,
+				E3F429A61D884BC50001AF77 /* fakeStatus.plist in Resources */,
 				E3C770321D686A6C0076F211 /* AZTestViewController.xib in Resources */,
 				E38614F21D72B78A00CDFE0D /* MBProgressHUD.bundle in Resources */,
 				E30A94C51D67A97600388801 /* Assets.xcassets in Resources */,
@@ -923,6 +932,7 @@
 				E3E626861D75C6A600F9C127 /* MJIvar.m in Sources */,
 				E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */,
 				E3E626831D75C6A600F9C127 /* MJArgument.m in Sources */,
+				E38C64C51D823EE600EF0451 /* AZStatusToolBar.m in Sources */,
 				E3C6D8D11D758FE200E714F9 /* AZStatus.m in Sources */,
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,

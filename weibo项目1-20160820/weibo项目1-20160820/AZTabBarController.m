@@ -70,7 +70,7 @@
     [vc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
     //设置子控制器的背景颜色
-    vc.view.backgroundColor=AZRandomColor;
+    vc.view.backgroundColor=AZColor(211, 211, 211);
     
     //添加导航控制器
     AZNavigationController *navi=[[AZNavigationController alloc]initWithRootViewController:vc];
