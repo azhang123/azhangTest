@@ -170,7 +170,7 @@
     }
     //发起请求
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-//        MYLog(@"responseObject%@",responseObject);
+        MYLog(@"responseObject%@",responseObject);
         //获得新微博的frame
         NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
 //        MYLog(@"%@",responseObject);

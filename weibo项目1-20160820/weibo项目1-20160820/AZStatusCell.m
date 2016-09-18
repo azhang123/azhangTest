@@ -12,6 +12,7 @@
 #import "AZPhoto.h"
 #import "UIImageView+WebCache.h"
 #import "AZStatusToolBar.h"
+#import "AZStatusPhotosView.h"
 
 @interface AZStatusCell()
 /** 原创微博整体 */
@@ -21,7 +22,7 @@
 /** vip图标 */
 @property(nonatomic,weak)UIImageView *vipView;
 /** 配图 */
-@property(nonatomic,weak)UIImageView *photoView;
+@property(nonatomic,weak)AZStatusPhotosView *photosView;
 /** 名字 */
 @property(nonatomic,weak)UILabel *nameLabel;
 /** 时间 */
@@ -38,7 +39,7 @@
 @property(nonatomic,weak)UILabel *retweeted_contentLabel;
 
 /** 转发配图 */
-@property(nonatomic,weak)UIImageView *retweeted_photoView;
+@property(nonatomic,weak)AZStatusPhotosView *retweeted_photosView;
 
 @property(nonatomic,weak)AZStatusToolBar *status_toolBar;
 
@@ -114,9 +115,9 @@
     self.vipView=vipView;
     
     /** 配图 */
-    UIImageView *photoView=[[UIImageView alloc]init];
-    [originalView addSubview:photoView];
-    self.photoView=photoView;
+    AZStatusPhotosView *photosView=[[AZStatusPhotosView alloc]init];
+    [originalView addSubview:photosView];
+    self.photosView=photosView;
     
     /** 时间 */
     UILabel *timeLabel=[[UILabel alloc]init];
@@ -156,9 +157,10 @@
     self.retweeted_contentLabel=retweeted_contentLabel;
     
     /** 转发配图 */
-    UIImageView *retweeted_photoView=[[UIImageView alloc]init];
-    [retweeted_view addSubview:retweeted_photoView];
-    self.retweeted_photoView=retweeted_photoView;
+    AZStatusPhotosView *retweeted_photosView=[[AZStatusPhotosView alloc]init];
+    [retweeted_view addSubview:retweeted_photosView];
+    self.retweeted_photosView=retweeted_photosView;
+    
 }
 
 /**
@@ -194,15 +196,13 @@
     
     /** 配图 */
     if (status.pic_urls.count) {
+        self.photosView.frame=statusFrame.photoViewF;
+        self.photosView.photos=status.pic_urls;
+        self.photosView.hidden=NO;
         
-        self.photoView.frame=statusFrame.photoViewF;
-        AZPhoto *photo=[status.pic_urls firstObject];
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-        self.photoView.backgroundColor=[UIColor blueColor];
-        self.photoView.hidden=NO;
     }else
     {
-        self.photoView.hidden=YES;
+        self.photosView.hidden=YES;
     }
     
     /** 名字 */
@@ -247,14 +247,13 @@
         /** 转发配图 */
         if (retweeted_status.pic_urls.count) {
             
-            self.retweeted_photoView.frame=statusFrame.retweeted_photoViewF;
-            AZPhoto *reweeted_photo=[retweeted_status.pic_urls firstObject];
-            [self.retweeted_photoView sd_setImageWithURL:[NSURL URLWithString:reweeted_photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-            self.retweeted_photoView.backgroundColor=[UIColor blueColor];
-            self.retweeted_photoView.hidden=NO;
+            self.retweeted_photosView.frame=statusFrame.retweeted_photoViewF;
+            self.retweeted_photosView.photos=retweeted_status.pic_urls;
+//            self.retweeted_photosView.backgroundColor=[UIColor blueColor];
+            self.retweeted_photosView.hidden=NO;
         }else
         {
-            self.retweeted_photoView.hidden=YES;
+            self.retweeted_photosView.hidden=YES;
         }
 
     }else

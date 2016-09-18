@@ -19,6 +19,8 @@
 		E31CE9DD1D6E83BD008CECA9 /* AZNewfeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = E31CE9DC1D6E83BD008CECA9 /* AZNewfeatureController.m */; };
 		E31F6EFB1D8CC61D00565433 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E31F6EFA1D8CC61D00565433 /* NSDate+Extension.m */; };
 		E31F6EFE1D8D074A00565433 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E31F6EFD1D8D074A00565433 /* NSString+Extension.m */; };
+		E32592E61D8ECC9A00A74936 /* AZStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = E32592E51D8ECC9A00A74936 /* AZStatusPhotosView.m */; };
+		E32592E91D8ECD2E00A74936 /* AZStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E32592E81D8ECD2E00A74936 /* AZStatusPhotoView.m */; };
 		E33B03CD1D695670007D6F8D /* AZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CC1D695670007D6F8D /* AZSearchBar.m */; };
 		E33B03D01D69E3F7007D6F8D /* AZDropMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03CF1D69E3F7007D6F8D /* AZDropMenuController.m */; };
 		E33B03D61D69E5AE007D6F8D /* AZTitleMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33B03D51D69E5AE007D6F8D /* AZTitleMenuController.m */; };
@@ -121,6 +123,10 @@
 		E31F6EFA1D8CC61D00565433 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		E31F6EFC1D8D074A00565433 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		E31F6EFD1D8D074A00565433 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		E32592E41D8ECC9A00A74936 /* AZStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatusPhotosView.h; sourceTree = "<group>"; };
+		E32592E51D8ECC9A00A74936 /* AZStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatusPhotosView.m; sourceTree = "<group>"; };
+		E32592E71D8ECD2E00A74936 /* AZStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZStatusPhotoView.h; sourceTree = "<group>"; };
+		E32592E81D8ECD2E00A74936 /* AZStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZStatusPhotoView.m; sourceTree = "<group>"; };
 		E33B03CB1D695670007D6F8D /* AZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZSearchBar.h; sourceTree = "<group>"; };
 		E33B03CC1D695670007D6F8D /* AZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZSearchBar.m; sourceTree = "<group>"; };
 		E33B03CE1D69E3F7007D6F8D /* AZDropMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZDropMenuController.h; sourceTree = "<group>"; };
@@ -566,6 +572,10 @@
 				E3D7805E1D7C6D90009718F4 /* AZStatusCell.m */,
 				E38C64C31D823EE600EF0451 /* AZStatusToolBar.h */,
 				E38C64C41D823EE600EF0451 /* AZStatusToolBar.m */,
+				E32592E41D8ECC9A00A74936 /* AZStatusPhotosView.h */,
+				E32592E51D8ECC9A00A74936 /* AZStatusPhotosView.m */,
+				E32592E71D8ECD2E00A74936 /* AZStatusPhotoView.h */,
+				E32592E81D8ECD2E00A74936 /* AZStatusPhotoView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -940,6 +950,7 @@
 				E3C6D8C71D757F0200E714F9 /* SDWebImagePrefetcher.m in Sources */,
 				E3C6D8CA1D757F0200E714F9 /* UIImage+MultiFormat.m in Sources */,
 				E33D8D0B1D7F8DFC0025DF57 /* AZPhoto.m in Sources */,
+				E32592E91D8ECD2E00A74936 /* AZStatusPhotoView.m in Sources */,
 				E3C6D8C21D757F0200E714F9 /* SDWebImageCompat.m in Sources */,
 				E3E626861D75C6A600F9C127 /* MJIvar.m in Sources */,
 				E3B7348C1D71CB720084891F /* AFURLResponseSerialization.m in Sources */,
@@ -948,6 +959,7 @@
 				E3C6D8D11D758FE200E714F9 /* AZStatus.m in Sources */,
 				E30A94D71D67AE7800388801 /* AZHomeViewController.m in Sources */,
 				E30BAF481D6B2D950015190F /* AZTabBar.m in Sources */,
+				E32592E61D8ECC9A00A74936 /* AZStatusPhotosView.m in Sources */,
 				E30A94DA1D67AEA500388801 /* AZMessageViewController.m in Sources */,
 				E3417EB11D6F1E0600348210 /* AZOAuthViewController.m in Sources */,
 				E3E6268A1D75C6A600F9C127 /* MJTypeEncoding.m in Sources */,

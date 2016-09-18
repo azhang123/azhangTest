@@ -9,6 +9,7 @@
 #import "AZStatusFram.h"
 #import "AZStatus.h"
 #import "AZUser.h"
+#import "AZStatusPhotosView.h"
 
 
 @implementation AZStatusFram
@@ -68,7 +69,8 @@
         CGFloat photoWH=100;
         CGFloat photoX=iconX;
         CGFloat photoY=CGRectGetMaxY(self.contentLabelF)+AZStatusMargin;
-        self.photoViewF=CGRectMake(photoX, photoY, photoWH, photoWH);
+        CGSize photoSize=[AZStatusPhotosView sizeWithCount:status.pic_urls.count];
+        self.photoViewF=(CGRect){{photoX,photoY},photoSize};
         originalH=CGRectGetMaxY(self.photoViewF)+AZStatusMargin;
 
     }else//没配图
@@ -104,7 +106,9 @@
             CGFloat retweeted_photoWH=100;
             CGFloat retweeted_photoX=iconX;
             CGFloat retweeted_photoY=CGRectGetMaxY(self.retweeted_contentLabelF)+AZStatusMargin;
-            self.retweeted_photoViewF=CGRectMake(retweeted_photoX, retweeted_photoY, retweeted_photoWH, retweeted_photoWH);
+            CGSize retweeted_photoSize=[AZStatusPhotosView sizeWithCount:retweeted_status.pic_urls.count];
+            self.retweeted_photoViewF=(CGRect){{retweeted_photoX,retweeted_photoY},retweeted_photoSize};
+            
             retweetedH=CGRectGetMaxY(self.retweeted_photoViewF)+AZStatusMargin;
             
         }else//没配图
