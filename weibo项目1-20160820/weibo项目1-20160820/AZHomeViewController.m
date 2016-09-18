@@ -134,59 +134,62 @@
  */
 -(void)loadRefreshStatus:(UIRefreshControl *)control
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(),^{
-        
-        NSDictionary *responseObject=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"fakeStatus" ofType:@"plist"]];
-                NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
-        //        MYLog(@"%@",responseObject);
-                //插入新微博
-                NSRange range=NSMakeRange(0, newStatusFrames.count);
-        //        MYLog(@"%d",newStatusFrames.count);
-                NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
-                [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
-                //更新微博
-                [self.tableView reloadData];
-                [control endRefreshing];
-        
-                //显示微博刷新数量
-                [self presentStatusRefreshingCount:newStatusFrames.count];
-        
-    });
+//    /**
+//     *  加载本地调试数据
+//     */
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(),^{
+//        
+//        NSDictionary *responseObject=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"fakeStatus" ofType:@"plist"]];
+//                NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
+//        //        MYLog(@"%@",responseObject);
+//                //插入新微博
+//                NSRange range=NSMakeRange(0, newStatusFrames.count);
+//        //        MYLog(@"%d",newStatusFrames.count);
+//                NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
+//                [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
+//                //更新微博
+//                [self.tableView reloadData];
+//                [control endRefreshing];
+//        
+//                //显示微博刷新数量
+//                [self presentStatusRefreshingCount:newStatusFrames.count];
+//        
+//    });
     
     
-//    //请求管理者
-//    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
-//    //设置请求参数
-//    AZAccount *account=[AZAccountTool account];
-//    NSMutableDictionary *params=[NSMutableDictionary dictionary];
-//    params[@"access_token"]=account.access_token;
-//    
-//    AZStatusFram *firstStatusF=[self.statusFrames firstObject];
-//    if (firstStatusF.status) {
-//        params[@"since_id"]=firstStatusF.status.idstr;
-//    }
-//    //发起请求
-//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-////        MYLog(@"responseObject%@",responseObject);
-//        //获得新微博的frame
-//        NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
-////        MYLog(@"%@",responseObject);
-//        //插入新微博
-//        NSRange range=NSMakeRange(0, newStatusFrames.count);
-////        MYLog(@"%d",newStatusFrames.count);
-//        NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
-//        [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
-//        //更新微博
-//        [self.tableView reloadData];
-//        [control endRefreshing];
-//        
-//        //显示微博刷新数量
-//        [self presentStatusRefreshingCount:newStatusFrames.count];
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        MYLog(@"请求失败:%@",error);
-//        [control endRefreshing];
-//    }];
+    //请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    //设置请求参数
+    AZAccount *account=[AZAccountTool account];
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    params[@"access_token"]=account.access_token;
+    
+    AZStatusFram *firstStatusF=[self.statusFrames firstObject];
+    if (firstStatusF.status) {
+        params[@"since_id"]=firstStatusF.status.idstr;
+    }
+    //发起请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+//        MYLog(@"responseObject%@",responseObject);
+        //获得新微博的frame
+        NSMutableArray *newStatusFrames=[self statusFrameWithArray:responseObject[@"statuses"]];
+//        MYLog(@"%@",responseObject);
+        //插入新微博
+        NSRange range=NSMakeRange(0, newStatusFrames.count);
+//        MYLog(@"%d",newStatusFrames.count);
+        NSIndexSet *inset=[NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statusFrames insertObjects:newStatusFrames atIndexes:inset];
+        //更新微博
+        [self.tableView reloadData];
+        [control endRefreshing];
+        
+        //显示微博刷新数量
+        [self presentStatusRefreshingCount:newStatusFrames.count];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        MYLog(@"请求失败:%@",error);
+        [control endRefreshing];
+    }];
 }
 /**
  *  显示微博刷新数量

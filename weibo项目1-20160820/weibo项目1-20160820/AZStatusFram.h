@@ -18,6 +18,7 @@
 /** 转发微博正文字体 */
 #define AZRetweetedContentFont [UIFont systemFontOfSize:14]
 
+#define AZStatusMargin 10
 
 @class AZStatus;
 @interface AZStatusFram : NSObject

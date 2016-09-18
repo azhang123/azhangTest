@@ -120,6 +120,8 @@
     
     /** 时间 */
     UILabel *timeLabel=[[UILabel alloc]init];
+    self.timeLabel.numberOfLines=0;
+    timeLabel.textColor=[UIColor orangeColor];
     timeLabel.font=AZUserTimeFont;
     [originalView addSubview:timeLabel];
     self.timeLabel=timeLabel;
@@ -208,14 +210,21 @@
     self.nameLabel.text=user.name;
     
     /** 时间 */
-    self.timeLabel.text=status.created_at;
-    self.timeLabel.numberOfLines=0;
-    self.timeLabel.frame=statusFrame.timeLabelF;
-    
+    NSString *time=status.created_at;
+    CGFloat timeX=statusFrame.nameLabelF.origin.x;
+    CGFloat timeY=CGRectGetMaxY(statusFrame.nameLabelF)+AZStatusMargin;
+    CGSize timeSize=[time sizeWithFont:AZUserTimeFont];
+    self.timeLabel.frame=(CGRect){{timeX,timeY},timeSize};
+    self.timeLabel.text=time;
+
     /** 来源 */
+    CGFloat sourceX=CGRectGetMaxX(self.timeLabel.frame)+AZStatusMargin;
+    CGFloat sourceY=timeY;
+    CGSize sourceSize=[status.source sizeWithFont:AZUserSourceFont];
+//    MYLog(@"%@",status.source);
+    self.sourceLabel.frame=(CGRect){{sourceX,sourceY},sourceSize};
     self.sourceLabel.text=status.source;
-    self.sourceLabel.frame=statusFrame.sourceLabelF;
-    
+
     /** 正文 */
     self.contentLabel.frame=statusFrame.contentLabelF;
     self.contentLabel.text=status.text;

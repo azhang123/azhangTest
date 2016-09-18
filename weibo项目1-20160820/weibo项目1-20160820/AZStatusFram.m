@@ -10,31 +10,9 @@
 #import "AZStatus.h"
 #import "AZUser.h"
 
-#define AZStatusMargin 10
 
 @implementation AZStatusFram
 
-
-/**
- *  获得文字内容的尺寸
- *
- *  @param text 文字内容
- *  @param font 字体
- *
- *  @return 文字尺寸
- */
--(CGSize)sizeWithText:(NSString *)text Font:(UIFont *)font maxW:(CGFloat)maxW
-{
-    NSMutableDictionary *attrs=[NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName]=font;
-    CGSize maxSize=CGSizeMake(maxW, MAXFLOAT);
-    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-}
-
--(CGSize)sizeWithText:(NSString *)text Font:(UIFont *)font
-{
-    return [self sizeWithText:text Font:font maxW:MAXFLOAT];
-}
 
 -(void)setStatus:(AZStatus *)status
 {
@@ -52,7 +30,7 @@
     /** 名字 */
     CGFloat nameX=CGRectGetMaxX(self.iconViewF)+AZStatusMargin;
     CGFloat nameY=iconY;
-    CGSize nameSize=[self sizeWithText:user.name Font:AZUserNameFont];
+    CGSize nameSize=[status.user.name sizeWithFont:AZUserNameFont];
     self.nameLabelF=(CGRect){{nameX,nameY},nameSize};
 
     /** vip图标 */
@@ -68,21 +46,20 @@
     /** 时间 */
     CGFloat timeX=nameX;
     CGFloat timeY=CGRectGetMaxY(self.nameLabelF)+AZStatusMargin;
-    CGSize timeSize=[self sizeWithText:status.created_at Font:AZUserTimeFont];
-    MYLog(@"%@",status.created_at);
+    CGSize timeSize=[status.created_at sizeWithFont:AZUserTimeFont];
     self.timeLabelF=(CGRect){{timeX,timeY},timeSize};
 
     /** 来源 */
     CGFloat sourceX=CGRectGetMaxX(self.timeLabelF)+AZStatusMargin;
     CGFloat sourceY=timeY;
-    CGSize sourceSize=[self sizeWithText:status.source Font:AZUserSourceFont];
+    CGSize sourceSize=[status.source sizeWithFont:AZUserSourceFont];
     self.sourceLabelF=(CGRect){{sourceX, sourceY},sourceSize};
     
     /** 正文 */
     CGFloat contentX=iconX;
     CGFloat contentY=MAX(CGRectGetMaxY(self.iconViewF), CGRectGetMaxY(self.timeLabelF))+AZStatusMargin;
     CGFloat maxW=cellW-2*AZStatusMargin;
-    CGSize contentSize=[self sizeWithText:status.text Font:AZUserContentFont maxW:maxW];
+    CGSize contentSize=[status.text sizeWithFont:AZUserContentFont maxW:maxW];
     self.contentLabelF=(CGRect){{contentX,contentY},contentSize};
 
     /** 配图 */
@@ -118,7 +95,7 @@
         CGFloat retweeted_contentX=AZStatusMargin;
         CGFloat retweeted_contentY=AZStatusMargin;
         CGFloat retweeted_maxW=cellW-2*AZStatusMargin;
-        CGSize retweeted_contentSize=[self sizeWithText:retweeted_status.text Font:AZUserContentFont maxW:retweeted_maxW];
+        CGSize retweeted_contentSize=[retweeted_status.text sizeWithFont:AZUserContentFont maxW:retweeted_maxW];
         self.retweeted_contentLabelF=(CGRect){{retweeted_contentX,retweeted_contentY},retweeted_contentSize};
         
         /** 转发微博配图 */

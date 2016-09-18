@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 #import "UIView+Extension.h"
 #import "UIWindow+Extension.h"
+#import "NSString+Extension.h"
 
 //沙盒路径
 #define AZAccountPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account.archive"]
